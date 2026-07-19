@@ -116,6 +116,27 @@ density as a means of preserving green space* — a third framing.
 
 → **H_local strengthened**: the source of creativity is the form, not reasoning. Aufhebung reproduces *fully* (marker 1.0) on a 4B non-reasoning model and *substantively* (marker 0.8 but refuses_binary 1.0, novelty 0.98) on a 3B. **Creative problem-solving via the triad is practically feasible on a local non-reasoning small model (3–4B) — no reasoning stage, no large model needed.**
 
+## ⚑ Exp 3c — ultra-small 1B non-reasoning models (option C)
+Option B reached non-reasoning 3–4B. To find the floor, two **1B-class non-reasoning** models (`llama3.2:1b`, `gemma3:1b`) were added (triad fixed; same 5 items × 3 repeats = 30 local calls).
+
+### 5-model cross quantitative (75 runs total)
+| model | kind | marker | refuses_binary | third-words | novelty |
+|---|---|---|---|---|---|
+| gemma4:12b-mlx | reasoning | 1.0 | 1.0 | 0.4 | 0.979 |
+| gemma3:4b | non-reasoning | 1.0 | 1.0 | 0.33 | 0.965 |
+| **gemma3:1b** | **non-reasoning 1B** | **1.0** | **1.0** | **0.73** | **0.995** |
+| llama3.2:3b | non-reasoning | 0.8 | 1.0 | 0.27 | 0.983 |
+| **llama3.2:1b** | **non-reasoning 1B** | **0.933** | **1.0** | **0.73** | 0.958 |
+
+### Key — Aufhebung reproduces at 1B (the strongest H_local evidence)
+1. **refuses_binary = 1.0 in both 1B models.** Even a 1B non-reasoning model refuses the binary every run. → the core of Aufhebung comes from the form, not reasoning or capacity.
+2. **marker compliance**: `gemma3:1b` is **1.0** (a 1B model outperforming the 3B llama), `llama3.2:1b` 0.933 (only 1 of 15 runs missed the marker). → **form compliance is not monotonic in size**: the Gemma family follows the form better than Llama at equal size; it is family/quantization dependent, not purely size.
+3. **novelty 0.958–0.995 at 1B** — creative dispersion holds at 1B; a different synthesis each run.
+4. **third-word count 0.73 at 1B** — *higher* than at 3–4B (0.27–0.33). Smaller models lean more heavily on the template's "not X but Y / reframe / shift" phrasing (form-dependence *increases* as capacity drops).
+5. **Qualitative (human J)** — 1B produces *named* third systems: `gemma3:1b` freshwater **"Dynamic Adaptive Allocation System — participatory, ecologically-informed, socially just"**, density **"a dialectical process where political mobilization (parks) and ecological regeneration (green-space creation) are mutually reinforcing"** (explicitly dialectical!), pluto "a revised definition prioritizing dynamic orbital stability, active geology, self-sustaining formation". `llama3.2:1b` freshwater **"Water Stewardship Model"**, pluto "a revised definition balancing clear orbital paths with gravitational interactions, elevating Pluto's status".
+
+→ **H_local final support**: **the triad's Aufhebung reproduces even on a 1B non-reasoning ultra-small model** (refuses_binary 1.0, marker 0.93–1.0, novelty 0.96–0.995, named third designs produced). **Creative problem-solving via the triad is practically feasible on a local ultra-small (1B, non-reasoning) LLM — no reasoning stage, no large model, no cloud needed.** Creativity arises from the structural movement of the dialectical form, not from model capacity.
+
 ## Caveats / next steps
 - **One local model only** (`gemma4:12b-mlx`). To harden the claim, extend to non-reasoning
   small models (`qwen3:8b`, `llama3.2:3b`) — "does Aufhebung reproduce on a small

@@ -1,11 +1,88 @@
 {
-  "n_runs": 45,
+  "n_runs": 75,
   "models": [
+    "gemma3:1b",
     "gemma3:4b",
     "gemma4:12b-mlx",
+    "llama3.2:1b",
     "llama3.2:3b"
   ],
   "by_model": {
+    "gemma3:1b": {
+      "kind": "non-reasoning",
+      "n_runs": 15,
+      "mean_marker_rate": 1.0,
+      "mean_refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.73,
+      "mean_within_item_novelty": 0.995,
+      "by_item": {
+        "battery_limits": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 1.33,
+          "within_item_novelty": 0.997,
+          "open_ended": false,
+          "syntheses": [
+            "A balanced approach prioritizing strategic investment, ethical consideration, and adaptable planning is essential for navigating the complex challenges posed by technological advancement while safeguarding human well-bei",
+            "A more nuanced and adaptable strategy focusing on strategic infrastructure development, coupled with targeted incentives for sustainable alternatives, offers the most effective path toward mitigating long-term societal r",
+            "To move beyond a purely technological fix and embrace a holistic approach that integrates environmental stewardship with societal well-being, we must prioritize a paradigm shift towards sustainable consumption patterns a"
+          ]
+        },
+        "density_greenspace": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.33,
+          "within_item_novelty": 0.995,
+          "open_ended": true,
+          "syntheses": [
+            "A truly equitable urban future requires a paradigm shift from simply maximizing density to fostering an integrated land use strategy that prioritizes equitable distribution of green space, recognizing its vital role in m",
+            "A robust urban planning strategy must embrace a dialectical process where political mobilization (preserving parks) and ecological regeneration (green space creation) are mutually reinforcing, fostering a city that not o",
+            "A sustainable urban development strategy must embrace a layered approach—integrating green space throughout each zone through strategic vertical and pocket park design, ensuring equitable access to these spaces across al"
+          ]
+        },
+        "freshwater_alloc": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 1.0,
+          "within_item_novelty": 0.993,
+          "open_ended": true,
+          "syntheses": [
+            "The Dynamic Adaptive Allocation System represents a fundamental shift towards a participatory, ecologically-informed, and socially just approach to managing this limited resource, moving beyond outdated prioritization to",
+            "A robust, participatory governance structure, rooted in ecological understanding and community empowerment, offers the most promising path towards sustainably managing limited freshwater while mitigating historical inequ",
+            "Therefore, an adaptive approach to resource management, grounded in ecological principles and participatory governance, offers a path toward a more equitable and sustainable future for the region's freshwater resources.\n"
+          ]
+        },
+        "minimum_wage": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.67,
+          "within_item_novelty": 0.991,
+          "open_ended": false,
+          "syntheses": [
+            "The pursuit of absolute minimum wage increases must be tempered by an acknowledgement of the complex, multifaceted nature of labor markets, acknowledging that simply raising a floor does not guarantee prosperity or equit",
+            "A carefully calibrated minimum wage policy – approaching $15 per hour – offers a strategically beneficial path toward improved poverty reduction and enhanced labor market stability by fostering increased productivity and",
+            "The optimal approach towards minimum wage policy necessitates a nuanced understanding of labor market dynamics, prioritizing adaptability and resilience over rigid, universally applied regulations.\n\nSYNTHESIS CONCLUSION:"
+          ]
+        },
+        "pluto_planet": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.33,
+          "within_item_novelty": 1.0,
+          "open_ended": false,
+          "syntheses": [
+            "The reclassification of Pluto as a full planet is justified by acknowledging its geological activity while upholding the fundamental criteria for planetary status – orbiting the Sun, being nearly round, and having cleare",
+            "A more nuanced understanding of “clearing the neighborhood” – encompassing gravitational influence and self-sustaining processes – is necessary for accurately assessing Pluto's importance in our understanding of the sola",
+            "The revised definition of planetary status should prioritize dynamic orbital stability, active geological processes, and self-sustaining formation as core characteristics, acknowledging Pluto’s unique position as a dynam"
+          ]
+        }
+      }
+    },
     "gemma3:4b": {
       "kind": "non-reasoning",
       "n_runs": 15,
@@ -152,6 +229,81 @@
             "Pluto should be reclassified as a planet under a revised definition that defines planethood by geophysical complexity rather than orbital clearance.",
             "The question of whether Pluto is a planet is a category error; the solution is to replace static definitions with a dynamic taxonomy based on systemic dominance.",
             "A planet should be defined by its internal geological and gravitational autonomy rather than its external orbital dominance."
+          ]
+        }
+      }
+    },
+    "llama3.2:1b": {
+      "kind": "non-reasoning",
+      "n_runs": 15,
+      "mean_marker_rate": 0.933,
+      "mean_refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.73,
+      "mean_within_item_novelty": 0.958,
+      "by_item": {
+        "battery_limits": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.33,
+          "within_item_novelty": 0.974,
+          "open_ended": false,
+          "syntheses": [
+            "Governments should adopt a more nuanced approach to addressing the issue of combustion-engine cars, one that balances the need for progress with the need for caution and consideration of alternative solutions.",
+            "Governments should delay their mandate on phase-out of new combustion-engine cars by 2035 until current commercial lithium-ion cells and solid-state battery prototypes have reached aviation-grade energy density first.",
+            "Governments should focus on promoting the development and adoption of electric vehicles in all sectors, including transportation, industry, and agriculture, rather than mandating a phase-out of new combustion-engine cars"
+          ]
+        },
+        "density_greenspace": {
+          "n": 3,
+          "marker_rate": 0.667,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 2.0,
+          "within_item_novelty": 0.991,
+          "open_ended": true,
+          "syntheses": [
+            "**Thesis**\n\nThe strongest position the facts most directly support is that increasing urban density through upzoning and prioritizing housing development over green space can lead to a decline in mental health, increased",
+            "A city should prioritize the preservation of existing parks and green spaces over new developments that prioritize housing density.\"\n\nThis synthesis maintains the core benefits of increased housing density (lowering per-",
+            "A city must strive to balance housing density with green space through a nuanced approach that incorporates both rooftop and ground-level parks. This synthesis recognizes the inherent contradictions between these goals a"
+          ]
+        },
+        "freshwater_alloc": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 0.947,
+          "open_ended": true,
+          "syntheses": [
+            "A Water Stewardship Model can provide a fair and effective mechanism for allocating limited freshwater resources among agriculture, industry, and urban use.",
+            "A fair and sustainable allocation of limited freshwater resources among agriculture, industry, and urban use can be achieved through a multi-stage process that prioritizes economic growth while balancing environmental su",
+            "A new system of freshwater allocation should prioritize both market efficiency and social equity, ensuring that small-scale farmers have access to sufficient water while also addressing the needs of marginalized communit"
+          ]
+        },
+        "minimum_wage": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 0.912,
+          "open_ended": false,
+          "syntheses": [
+            "A moderate increase in the national minimum wage would have a marginal effect on both poverty reduction and employment, but only because it would create a temporary surplus of low-wage labor that could be absorbed by emp",
+            "A substantial increase in the national minimum wage can have both positive effects on poverty reduction and job market outcomes. However, it is crucial to carefully consider the potential trade-offs and unintended conseq",
+            "A substantial increase in the national minimum wage would likely have a mixed effect on poverty and employment, requiring policymakers to carefully consider the specific context and factors at play."
+          ]
+        },
+        "pluto_planet": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 1.33,
+          "within_item_novelty": 0.968,
+          "open_ended": false,
+          "syntheses": [
+            "A revised definition that balances the need for clear orbital paths with the possibility of gravitational interactions, while maintaining the criteria for planetary status, is necessary to reconcile the contradictions in",
+            "A revised definition of a planet should consider the complex interplay between celestial mechanics, planetary formation, and the hierarchical structure of our solar system, ultimately elevating Pluto's status to that of ",
+            "A revised definition of a planet must balance the need for robust criteria with the complexity of celestial bodies. By incorporating nuanced understanding and considering multiple factors, we can create a new position th"
           ]
         }
       }
