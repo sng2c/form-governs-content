@@ -24,14 +24,17 @@ def load_config() -> dict:
 
 
 def chat(prompt: str, config: dict, *, seed: int, n: int = 1) -> list[str]:
-    """Send a single user prompt; return n completions (one per call to keep seed varies)."""
+    """Send a single user prompt; return n completions (content strings only)."""
+    return [m["content"] for m in chat_meta(prompt, config, seed=seed, n=n)]
+
+
+def chat_meta(prompt: str, config: dict, *, seed: int, n: int = 1) -> list[dict]:
+    """Like chat() but returns rich metadata per completion: content, finish_reason,
+    usage, and had_reasoning. Used by the MVP multi-model study."""
     api_key = os.environ[config["api_key_env"]]
     if not api_key:
         raise RuntimeError(f"Missing API key: set {config['api_key_env']} in .env")
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-    }
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     out = []
     for i in range(n):
         body = {
@@ -45,12 +48,19 @@ def chat(prompt: str, config: dict, *, seed: int, n: int = 1) -> list[str]:
         resp = _call_with_retry(config["endpoint"], headers, body)
         data = resp.json()
         msg = data["choices"][0]["message"]
-        # Reasoning models (e.g. gpt-oss) put thinking in a separate field; we keep
-        # the final content, falling back to reasoning if content is empty.
         content = msg.get("content") or ""
+        reasoning = msg.get("reasoning") or ""
+        had_reasoning = bool(reasoning.strip())
+        # Reasoning models (e.g. gpt-oss) put thinking in a separate field; keep
+        # the final content, falling back to reasoning if content is empty.
         if not content.strip():
-            content = msg.get("reasoning") or ""
-        out.append(content)
+            content = reasoning
+        out.append({
+            "content": content,
+            "finish_reason": data["choices"][0].get("finish_reason"),
+            "usage": data.get("usage", {}),
+            "had_reasoning": had_reasoning,
+        })
     return out
 
 

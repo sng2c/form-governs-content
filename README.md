@@ -7,6 +7,7 @@
 📖 **상세 리포트**: [`report/REPORT.ko.md`](report/REPORT.ko.md) (한국어) · [`report/REPORT.md`](report/REPORT.md) (English)
 📑 **항목별 상세 설명**: [`report/ITEMS.ko.md`](report/ITEMS.ko.md) (한국어) · [`report/ITEMS.md`](report/ITEMS.md) (English)
 🌐 **English version of this README**: [`README.en.md`](README.en.md)
+🧪 **MVP 다중모델 연구**: [`report/MVP_STUDY.ko.md`](report/MVP_STUDY.ko.md) (한국어) · [`report/MVP_STUDY.md`](report/MVP_STUDY.md) (English)
 
 ---
 

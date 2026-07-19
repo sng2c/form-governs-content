@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://ollama.com/v1/chat/completions",
+  "api_key_env": "OLLAMA_API_KEY",
+  "temperature": 0.3,
+  "seed": 42,
+  "max_tokens": 4096,
+  "n_repeats": 2,
+  "models": [
+    "gpt-oss:120b",
+    "deepseek-v4-flash",
+    "kimi-k2.6",
+    "qwen3.5:397b",
+    "mistral-large-3:675b",
+    "glm-5.2",
+    "minimax-m3",
+    "gemma4:31b"
+  ],
+  "purposes": ["decide", "synthesize", "surface_assumptions"],
+  "binding": {
+    "decide": "red_blue_debate",
+    "synthesize": "dialectical_triad",
+    "surface_assumptions": "socratic_dialogue"
+  },
+  "content_items": ["minimum_wage", "pluto_planet"],
+  "model_types": {
+    "gpt-oss:120b": "reasoning",
+    "deepseek-v4-flash": "reasoning",
+    "kimi-k2.6": "general-moe",
+    "qwen3.5:397b": "general-moe",
+    "mistral-large-3:675b": "large-dense",
+    "glm-5.2": "general",
+    "minimax-m3": "general",
+    "gemma4:31b": "small-efficient"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "n_runs": 96,
+  "models": [
+    "deepseek-v4-flash",
+    "gemma4:31b",
+    "glm-5.2",
+    "gpt-oss:120b",
+    "kimi-k2.6",
+    "minimax-m3",
+    "mistral-large-3:675b",
+    "qwen3.5:397b"
+  ],
+  "realization_by_model": {
+    "gpt-oss:120b": {
+      "model_type": "reasoning",
+      "decide/minimum_wage/has_verdict_marker": 1.0,
+      "decide/pluto_planet/has_verdict_marker": 1.0,
+      "synthesize/minimum_wage/has_synthesis_marker": 1.0,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    },
+    "deepseek-v4-flash": {
+      "model_type": "reasoning",
+      "decide/minimum_wage/has_verdict_marker": 1.0,
+      "decide/pluto_planet/has_verdict_marker": 1.0,
+      "synthesize/minimum_wage/has_synthesis_marker": 1.0,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    },
+    "kimi-k2.6": {
+      "model_type": "general-moe",
+      "decide/minimum_wage/has_verdict_marker": 0.5,
+      "decide/pluto_planet/has_verdict_marker": 0.5,
+      "synthesize/minimum_wage/has_synthesis_marker": 0.5,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    },
+    "qwen3.5:397b": {
+      "model_type": "general-moe",
+      "decide/minimum_wage/has_verdict_marker": 1.0,
+      "decide/pluto_planet/has_verdict_marker": 1.0,
+      "synthesize/minimum_wage/has_synthesis_marker": 1.0,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    },
+    "mistral-large-3:675b": {
+      "model_type": "large-dense",
+      "decide/minimum_wage/has_verdict_marker": 1.0,
+      "decide/pluto_planet/has_verdict_marker": 1.0,
+      "synthesize/minimum_wage/has_synthesis_marker": 1.0,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    },
+    "glm-5.2": {
+      "model_type": "general",
+      "decide/minimum_wage/has_verdict_marker": 1.0,
+      "decide/pluto_planet/has_verdict_marker": 1.0,
+      "synthesize/minimum_wage/has_synthesis_marker": 1.0,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    },
+    "minimax-m3": {
+      "model_type": "general",
+      "decide/minimum_wage/has_verdict_marker": 1.0,
+      "decide/pluto_planet/has_verdict_marker": 1.0,
+      "synthesize/minimum_wage/has_synthesis_marker": 1.0,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    },
+    "gemma4:31b": {
+      "model_type": "small-efficient",
+      "decide/minimum_wage/has_verdict_marker": 1.0,
+      "decide/pluto_planet/has_verdict_marker": 1.0,
+      "synthesize/minimum_wage/has_synthesis_marker": 1.0,
+      "synthesize/pluto_planet/has_synthesis_marker": 1.0,
+      "surface_assumptions/minimum_wage/has_dialogue_marker": 1.0,
+      "surface_assumptions/pluto_planet/has_dialogue_marker": 1.0
+    }
+  },
+  "realization_by_model_type": {
+    "reasoning": {
+      "decide": 1.0,
+      "synthesize": 1.0,
+      "surface_assumptions": 1.0
+    },
+    "general-moe": {
+      "decide": 0.75,
+      "synthesize": 0.875,
+      "surface_assumptions": 1.0
+    },
+    "large-dense": {
+      "decide": 1.0,
+      "synthesize": 1.0,
+      "surface_assumptions": 1.0
+    },
+    "general": {
+      "decide": 1.0,
+      "synthesize": 1.0,
+      "surface_assumptions": 1.0
+    },
+    "small-efficient": {
+      "decide": 1.0,
+      "synthesize": 1.0,
+      "surface_assumptions": 1.0
+    }
+  },
+  "decide_stance_by_model": {
+    "minimum_wage": {
+      "deepseek-v4-flash": {
+        "qualified": 2
+      },
+      "gemma4:31b": {
+        "yes": 2
+      },
+      "glm-5.2": {
+        "qualified": 1,
+        "yes": 1
+      },
+      "gpt-oss:120b": {
+        "qualified": 1,
+        "yes": 1
+      },
+      "kimi-k2.6": {
+        "yes": 1,
+        "qualified": 1
+      },
+      "minimax-m3": {
+        "qualified": 2
+      },
+      "mistral-large-3:675b": {
+        "qualified": 2
+      },
+      "qwen3.5:397b": {
+        "qualified": 1,
+        "yes": 1
+      }
+    },
+    "pluto_planet": {
+      "deepseek-v4-flash": {
+        "yes": 2
+      },
+      "gemma4:31b": {
+        "yes": 2
+      },
+      "glm-5.2": {
+        "yes": 2
+      },
+      "gpt-oss:120b": {
+        "yes": 2
+      },
+      "kimi-k2.6": {
+        "yes": 2
+      },
+      "minimax-m3": {
+        "yes": 2
+      },
+      "mistral-large-3:675b": {
+        "qualified": 1,
+        "yes": 1
+      },
+      "qwen3.5:397b": {
+        "yes": 2
+      }
+    }
+  },
+  "synthesize_novelty_by_model": {
+    "gpt-oss:120b": 0.894,
+    "deepseek-v4-flash": 0.768,
+    "kimi-k2.6": 0.889,
+    "qwen3.5:397b": 0.796,
+    "mistral-large-3:675b": 0.86,
+    "glm-5.2": 0.713,
+    "minimax-m3": 0.88,
+    "gemma4:31b": 0.764
+  },
+  "mean_output_len_by_model": {
+    "gpt-oss:120b": 4822,
+    "deepseek-v4-flash": 3404,
+    "kimi-k2.6": 10016,
+    "qwen3.5:397b": 6412,
+    "mistral-large-3:675b": 5942,
+    "glm-5.2": 3170,
+    "minimax-m3": 5285,
+    "gemma4:31b": 2695
+  },
+  "reasoning_fraction_by_model": {
+    "gpt-oss:120b": 1.0,
+    "deepseek-v4-flash": 1.0,
+    "kimi-k2.6": 1.0,
+    "qwen3.5:397b": 1.0,
+    "mistral-large-3:675b": 0.0,
+    "glm-5.2": 1.0,
+    "minimax-m3": 1.0,
+    "gemma4:31b": 0.0
+  }
+}

@@ -10,6 +10,7 @@ in *substantive content* — its verdicts and conclusions?
 📖 **Detailed report**: [`report/REPORT.md`](report/REPORT.md) (English) · [`report/REPORT.ko.md`](report/REPORT.ko.md) (한국어)
 📑 **Per-item notes**: [`report/ITEMS.md`](report/ITEMS.md) (English) · [`report/ITEMS.ko.md`](report/ITEMS.ko.md) (한국어)
 🌐 **한국어 README**: [`README.md`](README.md)
+🧪 **MVP multi-model study**: [`report/MVP_STUDY.md`](report/MVP_STUDY.md) (English) · [`report/MVP_STUDY.ko.md`](report/MVP_STUDY.ko.md) (한국어)
 
 ---
 
