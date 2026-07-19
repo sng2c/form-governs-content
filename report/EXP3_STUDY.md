@@ -98,6 +98,24 @@ density as a means of preserving green space* — a third framing.
    each time → the triad is a form that generates *creative dispersion*, not a deterministic
    answer. This is the strongest empirical instance of "form produces content" (Hegel).
 
+## ⚑ Exp 3b — extended to non-reasoning small models (option B done)
+`gemma4:12b-mlx` was a reasoning model, so to test whether Aufhebung comes from the *form* rather than *reasoning capability*, two **non-reasoning small models** were added (llama3.2:3b, gemma3:4b; triad fixed; same 5 items × 3 repeats = 30 local calls).
+
+### Cross-model quantitative
+| model | kind | marker | refuses_binary | third-words | novelty |
+|---|---|---|---|---|---|
+| gemma4:12b-mlx | reasoning | 1.0 | 1.0 | 0.4 | 0.979 |
+| **gemma3:4b** | **non-reasoning** | **1.0** | **1.0** | 0.33 | 0.965 |
+| **llama3.2:3b** | **non-reasoning** | **0.8** | **1.0** | 0.27 | 0.983 |
+
+### Key finding — Aufhebung reproduces without reasoning
+1. **refuses_binary = 1.0 in all three** (reasoning, non-reasoning, 3B small). The triad's core Aufhebung property (refuse the binary) comes **from the form, not reasoning**. Even a 3B non-reasoning model refuses the binary in every run.
+2. **novelty 0.96–0.98 in all** — creative dispersion is reasoning-independent; the 3B non-reasoning model still produces a *different* synthesis each run (0.983).
+3. **Form *compliance* (exact marker emission) is capacity-sensitive**: gemma4 (12B reasoning) and gemma3 (4B non-reasoning) hit 1.0, but **llama3.2:3b drops to 0.8** (occasionally leaking raw `**THESIS` template text and missing the marker). → structural *compliance* is capacity-sensitive, but the dialectical *movement* (refuse binary + produce a third design) is form-driven and robust.
+4. **Qualitative (human J)** — the 4B non-reasoning (gemma3:4b) produces genuine third designs: freshwater "tiered system + dedicated backstop fund", pluto **a third category "major dwarf planet"** (refuses the planet/dwarf binary + invents a new category), density "layered approach integrating density with ecologically-rich public space". The 3B (llama3.2:3b) also produces third designs (minimum_wage: "inflation-indexed, sector-specific, with caution") though marker omission is more frequent.
+
+→ **H_local strengthened**: the source of creativity is the form, not reasoning. Aufhebung reproduces *fully* (marker 1.0) on a 4B non-reasoning model and *substantively* (marker 0.8 but refuses_binary 1.0, novelty 0.98) on a 3B. **Creative problem-solving via the triad is practically feasible on a local non-reasoning small model (3–4B) — no reasoning stage, no large model needed.**
+
 ## Caveats / next steps
 - **One local model only** (`gemma4:12b-mlx`). To harden the claim, extend to non-reasoning
   small models (`qwen3:8b`, `llama3.2:3b`) — "does Aufhebung reproduce on a small

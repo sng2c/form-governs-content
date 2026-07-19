@@ -1,21 +1,20 @@
-"""Analyze Exp 3: does the dialectical triad's Aufhebung hold on a small local model?
+"""Analyze Exp 3 across models: does the triad's Aufhebung reproduce on small
+NON-reasoning local models (not just the reasoning 12B)?
 
-Proxies per item:
-  - has_synthesis_marker: SYNTHESIS CONCLUSION present.
-  - refuses_binary: not a bare yes/no.
-  - is_third_proposition: the synthesis contains markers of a *new* determination
-    (re-framing words: 'higher', 'reframe', 'instead', 'not as ... but as', 'elevat',
-    'redefine', 'transition', 'third', 'mediate'). Proxy for Aufhebung quality.
-  - within-item novelty: shingle diversity across repeats (creative variance).
-  - length / reasoning.
+Groups by (model, item). For each model: marker rate, refuses-binary rate,
+third-proposition keyword count, within-item novelty. Then compares reasoning
+(gemma4:12b-mlx) vs non-reasoning (llama3.2:3b, gemma3:4b).
 
-The KEY output is the human-J surface: the extracted SYNTHESIS CONCLUSION line for
-each item, for the human to judge whether it is a genuine third proposition.
+The KEY output is the human-J surface: the SYNTHESIS CONCLUSION line for each
+(model, item), to judge whether each is a genuine third proposition — and whether
+non-reasoning small models produce genuine syntheses too.
 """
 import json
 import re
 from collections import defaultdict
 from pathlib import Path
+
+import numpy as np
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 RAW_PATH = DATA_DIR / "exp3_runs.jsonl"
@@ -23,14 +22,13 @@ OUT_PATH = DATA_DIR / "exp3_analysis.json"
 
 THIRD_WORDS = ["higher", "reframe", "instead", "not as", "but as", "elevat", "redefine",
                "transition", "third", "mediate", "refram", "sublat", "higher determination",
-               "rather than", "transcend", "reconceive", "shift from"]
+               "rather than", "transcend", "reconceive", "shift from", "category error",
+               "redesign", "reconfigure"]
 
 
 def extract_synthesis(text):
     m = re.search(r"SYNTHESIS CONCLUSION:\s*(.+)", text, re.I | re.S)
-    if m:
-        return m.group(1).strip().strip('"').strip()
-    return None
+    return m.group(1).strip().strip('"').strip() if m else None
 
 
 def refuses_binary(text):
@@ -40,7 +38,7 @@ def refuses_binary(text):
     return not (bare_yes or bare_no)
 
 
-def is_third_proposition(text):
+def third_count(text):
     t = text.lower()
     return sum(1 for w in THIRD_WORDS if w in t)
 
@@ -56,56 +54,72 @@ def main():
         r["synthesis"] = extract_synthesis(r["response"]) or r["response"][:300]
         r["has_marker"] = bool(extract_synthesis(r["response"]))
         r["refuses_binary"] = refuses_binary(r["synthesis"])
-        r["third_word_count"] = is_third_proposition(r["synthesis"])
+        r["third_word_count"] = third_count(r["synthesis"])
 
-    by_item = defaultdict(list)
+    models = sorted({r["model"] for r in runs})
+    # model kind
+    def kind(m):
+        rs = [r for r in runs if r["model"] == m]
+        return "reasoning" if rs and rs[0]["had_reasoning"] else "non-reasoning"
+
+    by_model_item = defaultdict(list)
     for r in runs:
-        by_item[r["content_id"]].append(r)
+        by_model_item[(r["model"], r["content_id"])].append(r)
 
-    summary = {}
-    for cid, rs in by_item.items():
-        marker_rate = sum(1 for r in rs if r["has_marker"]) / len(rs)
-        refuse_rate = sum(1 for r in rs if r["refuses_binary"]) / len(rs)
-        third = [r["third_word_count"] for r in rs]
-        # within-item novelty: mean pairwise shingle Jaccard distance among syntheses
-        sh = [shingle(r["synthesis"]) for r in rs]
-        import numpy as np
-        dists = []
-        for i in range(len(sh)):
-            for j in range(i + 1, len(sh)):
-                u = sh[i] | sh[j]
-                if u:
-                    dists.append(1 - len(sh[i] & sh[j]) / len(u))
-        novelty = round(float(np.mean(dists)), 3) if dists else 0.0
-        summary[cid] = {
-            "n": len(rs),
-            "marker_rate": round(marker_rate, 3),
-            "refuses_binary_rate": round(refuse_rate, 3),
-            "mean_third_word_count": round(float(np.mean(third)), 2),
-            "within_item_novelty": novelty,
-            "open_ended": rs[0]["is_open_ended"],
-            "syntheses": [r["synthesis"][:240] for r in rs],
+    summary_by_model = {}
+    for m in models:
+        mrs = [r for r in runs if r["model"] == m]
+        per_item = {}
+        for cid in sorted({r["content_id"] for r in mrs}):
+            rs = [r for r in mrs if r["content_id"] == cid]
+            sh = [shingle(r["synthesis"]) for r in rs]
+            dists = []
+            for i in range(len(sh)):
+                for j in range(i + 1, len(sh)):
+                    u = sh[i] | sh[j]
+                    if u:
+                        dists.append(1 - len(sh[i] & sh[j]) / len(u))
+            per_item[cid] = {
+                "n": len(rs),
+                "marker_rate": round(sum(r["has_marker"] for r in rs) / len(rs), 3),
+                "refuses_binary_rate": round(sum(r["refuses_binary"] for r in rs) / len(rs), 3),
+                "mean_third_word_count": round(np.mean([r["third_word_count"] for r in rs]), 2),
+                "within_item_novelty": round(float(np.mean(dists)), 3) if dists else 0.0,
+                "open_ended": rs[0]["is_open_ended"],
+                "syntheses": [r["synthesis"][:220] for r in rs],
+            }
+        summary_by_model[m] = {
+            "kind": kind(m),
+            "n_runs": len(mrs),
+            "mean_marker_rate": round(np.mean([v["marker_rate"] for v in per_item.values()]), 3),
+            "mean_refuses_binary_rate": round(np.mean([v["refuses_binary_rate"] for v in per_item.values()]), 3),
+            "mean_third_word_count": round(np.mean([v["mean_third_word_count"] for v in per_item.values()]), 2),
+            "mean_within_item_novelty": round(np.mean([v["within_item_novelty"] for v in per_item.values()]), 3),
+            "by_item": per_item,
         }
 
-    overall = {
-        "model": runs[0]["model"] if runs else "?",
+    out = {
         "n_runs": len(runs),
-        "mean_marker_rate": round(sum(s["marker_rate"] for s in summary.values()) / len(summary), 3),
-        "mean_refuses_binary_rate": round(sum(s["refuses_binary_rate"] for s in summary.values()) / len(summary), 3),
-        "mean_third_word_count": round(sum(s["mean_third_word_count"] for s in summary.values()) / len(summary), 2),
-        "mean_within_item_novelty": round(sum(s["within_item_novelty"] for s in summary.values()) / len(summary), 3),
+        "models": models,
+        "by_model": summary_by_model,
     }
-    out = {"overall": overall, "by_item": summary}
     OUT_PATH.write_text(json.dumps(out, indent=2, ensure_ascii=False))
 
-    print(f"=== Exp 3 analysis ({overall['n_runs']} runs, {overall['model']}) ===\n")
-    print(f"Overall: marker={overall['mean_marker_rate']}  refuses_binary={overall['mean_refuses_binary_rate']}  third_words={overall['mean_third_word_count']}  within_novelty={overall['mean_within_item_novelty']}\n")
-    print("Per item (human-J: read the syntheses — is each a genuine THIRD proposition?):")
-    for cid, s in summary.items():
-        tag = "OPEN" if s["open_ended"] else "cont"
-        print(f"\n  [{cid}] ({tag}) marker={s['marker_rate']} refuse_binary={s['refuses_binary_rate']} third={s['mean_third_word_count']} novelty={s['within_item_novelty']}")
-        for k, syn in enumerate(s["syntheses"]):
-            print(f"     r{k}: {syn}")
+    print(f"=== Exp 3 cross-model analysis ({len(runs)} runs) ===\n")
+    print(f"{'model':>16} {'kind':>14} {'marker':>7} {'refuse':>7} {'third':>6} {'novelty':>7}")
+    for m in models:
+        s = summary_by_model[m]
+        print(f"{m:>16} {s['kind']:>14} {s['mean_marker_rate']:>7} {s['mean_refuses_binary_rate']:>7} {s['mean_third_word_count']:>6} {s['mean_within_item_novelty']:>7}")
+
+    print("\n--- Per-model syntheses (human-J: genuine THIRD proposition?) ---")
+    for m in models:
+        print(f"\n### {m} ({summary_by_model[m]['kind']})")
+        for cid, v in summary_by_model[m]["by_item"].items():
+            tag = "OPEN" if v["open_ended"] else "cont"
+            print(f"  [{cid}] ({tag}) marker={v['marker_rate']} refuse={v['refuses_binary_rate']} third={v['mean_third_word_count']} novelty={v['within_item_novelty']}")
+            for k, syn in enumerate(v["syntheses"]):
+                print(f"     r{k}: {syn}")
+
     print(f"\nWrote {OUT_PATH}")
 
 

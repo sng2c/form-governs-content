@@ -1,77 +1,235 @@
 {
-  "overall": {
-    "model": "gemma4:12b-mlx",
-    "n_runs": 15,
-    "mean_marker_rate": 1.0,
-    "mean_refuses_binary_rate": 1.0,
-    "mean_third_word_count": 0.33,
-    "mean_within_item_novelty": 0.979
-  },
-  "by_item": {
-    "battery_limits": {
-      "n": 3,
-      "marker_rate": 1.0,
-      "refuses_binary_rate": 1.0,
+  "n_runs": 45,
+  "models": [
+    "gemma3:4b",
+    "gemma4:12b-mlx",
+    "llama3.2:3b"
+  ],
+  "by_model": {
+    "gemma3:4b": {
+      "kind": "non-reasoning",
+      "n_runs": 15,
+      "mean_marker_rate": 1.0,
+      "mean_refuses_binary_rate": 1.0,
       "mean_third_word_count": 0.33,
-      "within_item_novelty": 1.0,
-      "open_ended": false,
-      "syntheses": [
-        "The mandate should be tied to independent, sector-specific utility thresholds rather than aviation-grade milestones to ensure that car-market scaling is not stifled by external technical requirements.",
-        "The government should replace a single-milestone contingency with a Dynamic Technological Readiness Framework that ties phase-out schedules to verified multi-chemistry safety and density milestones.",
-        "Governments should mandate a phase-out of combustion engines based on passenger-vehicle viability while maintaining a separate, non-contingent industrial track for aviation-grade battery development."
-      ]
+      "mean_within_item_novelty": 0.965,
+      "by_item": {
+        "battery_limits": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 1.67,
+          "within_item_novelty": 0.915,
+          "open_ended": false,
+          "syntheses": [
+            "Governments should implement a phased transition to EVs by 2035, contingent upon demonstrable progress in multiple battery technologies alongside strategic investment in research, development, and infrastructure, recogni",
+            "Governments should implement a phased transition to electric vehicles by 2035, contingent on demonstrable progress across multiple technological and logistical dimensions – including safety, material sourcing, and innova",
+            "Governments should implement a phased transition to electric vehicles, prioritizing demonstrable safety and commercial viability alongside diversified energy solutions and robust infrastructure development, rather than r"
+          ]
+        },
+        "density_greenspace": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 1.0,
+          "open_ended": true,
+          "syntheses": [
+            "Cities must pursue a layered approach to growth that integrates strategically planned density with accessible, ecologically-rich public spaces as foundational elements for equitable and sustainable human flourishing.",
+            "A truly thriving city must achieve affordable housing through adaptive urban planning that integrates distributed green infrastructure as an essential component of social justice and ecological sustainability.",
+            "**Cities must strategically integrate high-density housing with accessible, multi-layered green infrastructure, prioritizing equitable access to both for the health and well-being of all residents.**"
+          ]
+        },
+        "freshwater_alloc": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 0.957,
+          "open_ended": true,
+          "syntheses": [
+            "A fair freshwater allocation mechanism requires a tiered system balancing economic contribution, human need, historical context, and ecological sustainability, managed through a transparent and adaptive governance struct",
+            "A fair freshwater allocation mechanism must prioritize efficient resource use while guaranteeing universal access to potable water through a tiered system coupled with robust social safeguards and a dedicated fund for ba",
+            "A just and sustainable freshwater allocation mechanism must balance economic productivity with ecological integrity and social equity through dynamic, tiered access informed by scientific carrying capacity assessments an"
+          ]
+        },
+        "minimum_wage": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 0.96,
+          "open_ended": false,
+          "syntheses": [
+            "A carefully calibrated and dynamically adjusted minimum wage, informed by sector-specific data and coupled with policies addressing market power imbalances and accounting for inflation, offers the most promising path tow",
+            "A carefully calibrated, inflation-adjusted national minimum wage increase, coupled with policies addressing market power imbalances, can improve worker welfare while minimizing negative employment impacts through a flexi",
+            "**The national minimum wage should be implemented as part of a dynamic, adaptive system that prioritizes both poverty reduction and sustained employment through continuous monitoring, sector-specific adjustments, and pro"
+          ]
+        },
+        "pluto_planet": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 0.995,
+          "open_ended": false,
+          "syntheses": [
+            "Pluto should be recognized as a significant planetary body within the outer solar system, defined by its size, geological complexity, and orbital characteristics, regardless of whether it perfectly satisfies the outdated",
+            "Planets should be defined as gravitationally dominant bodies within a specific orbital environment that exhibit significant internal geological processes, acknowledging the diverse nature of planetary systems beyond simp",
+            "Pluto should be reclassified as a \"major dwarf planet,\" acknowledging its unique geological complexity and orbital position within the Kuiper Belt while recognizing that the concept of a definitively \"cleared\" orbit is a"
+          ]
+        }
+      }
     },
-    "minimum_wage": {
-      "n": 3,
-      "marker_rate": 1.0,
-      "refuses_binary_rate": 1.0,
-      "mean_third_word_count": 0.0,
-      "within_item_novelty": 0.94,
-      "open_ended": false,
-      "syntheses": [
-        "A substantial minimum wage raise is supported only when integrated into a broader economic strategy that ensures labor demand scales alongside rising labor costs.",
-        "The evidence supports a substantial minimum wage increase provided it is implemented as a dynamic, indexed floor that accounts for sector-specific elasticities and inflationary erosion.",
-        "A substantial minimum wage increase is supported only as a context-dependent institutional tool that must be dynamically adjusted to the specific structural realities of individual labor markets."
-      ]
+    "gemma4:12b-mlx": {
+      "kind": "reasoning",
+      "n_runs": 15,
+      "mean_marker_rate": 1.0,
+      "mean_refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.4,
+      "mean_within_item_novelty": 0.979,
+      "by_item": {
+        "battery_limits": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.33,
+          "within_item_novelty": 1.0,
+          "open_ended": false,
+          "syntheses": [
+            "The mandate should be tied to independent, sector-specific utility thresholds rather than aviation-grade milestones to ensure that car-market scaling is not stifled by external technical requirements.",
+            "The government should replace a single-milestone contingency with a Dynamic Technological Readiness Framework that ties phase-out schedules to verified multi-chemistry safety and density milestones.",
+            "Governments should mandate a phase-out of combustion engines based on passenger-vehicle viability while maintaining a separate, non-contingent industrial track for aviation-grade battery development."
+          ]
+        },
+        "density_greenspace": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.33,
+          "within_item_novelty": 1.0,
+          "open_ended": true,
+          "syntheses": [
+            "Aggregated Urbanism uses high-density zoning as a strategic shield to preserve large-scale ecological integrity from the destructive effects of urban sprawl.",
+            "Urban growth must be realized through \"Ecological Density,\" wherein green space is codified as mandatory public infrastructure rather than an optional amenity competing with residential development.",
+            "The city must treat green space as a non-negotiable public utility that serves as the biological prerequisite for high-density habitation."
+          ]
+        },
+        "freshwater_alloc": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.33,
+          "within_item_novelty": 0.953,
+          "open_ended": true,
+          "syntheses": [
+            "The region must transition from a model of static allocation to a dynamic, tiered system where basic human and ecological needs are guaranteed as a non-negotiable floor, and all subsequent usage is governed by a \"Net-Zer",
+            "The region should adopt a Dynamic Value-Density Allocation system governed by a Real-Time Scarcity Index to ensure that water is distributed based on its socio-economic utility while strictly adhering to the ecological l",
+            "The region should adopt a tiered system where basic human needs are guaranteed as a public good, while surplus water is traded for industrial use, contingent upon mandatory recycling quotas that expand the total availabl"
+          ]
+        },
+        "minimum_wage": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 0.94,
+          "open_ended": false,
+          "syntheses": [
+            "A substantial minimum wage raise is supported only when integrated into a broader economic strategy that ensures labor demand scales alongside rising labor costs.",
+            "The evidence supports a substantial minimum wage increase provided it is implemented as a dynamic, indexed floor that accounts for sector-specific elasticities and inflationary erosion.",
+            "A substantial minimum wage increase is supported only as a context-dependent institutional tool that must be dynamically adjusted to the specific structural realities of individual labor markets."
+          ]
+        },
+        "pluto_planet": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 1.0,
+          "within_item_novelty": 1.0,
+          "open_ended": false,
+          "syntheses": [
+            "Pluto should be reclassified as a planet under a revised definition that defines planethood by geophysical complexity rather than orbital clearance.",
+            "The question of whether Pluto is a planet is a category error; the solution is to replace static definitions with a dynamic taxonomy based on systemic dominance.",
+            "A planet should be defined by its internal geological and gravitational autonomy rather than its external orbital dominance."
+          ]
+        }
+      }
     },
-    "pluto_planet": {
-      "n": 3,
-      "marker_rate": 1.0,
-      "refuses_binary_rate": 1.0,
-      "mean_third_word_count": 0.67,
-      "within_item_novelty": 1.0,
-      "open_ended": false,
-      "syntheses": [
-        "Pluto should be reclassified as a planet under a revised definition that defines planethood by geophysical complexity rather than orbital clearance.",
-        "The question of whether Pluto is a planet is a category error; the solution is to replace static definitions with a dynamic taxonomy based on systemic dominance.",
-        "A planet should be defined by its internal geological and gravitational autonomy rather than its external orbital dominance."
-      ]
-    },
-    "freshwater_alloc": {
-      "n": 3,
-      "marker_rate": 1.0,
-      "refuses_binary_rate": 1.0,
-      "mean_third_word_count": 0.33,
-      "within_item_novelty": 0.953,
-      "open_ended": true,
-      "syntheses": [
-        "The region must transition from a model of static allocation to a dynamic, tiered system where basic human and ecological needs are guaranteed as a non-negotiable floor, and all subsequent usage is governed by a \"Net-Zero Extraction\" mandat",
-        "The region should adopt a Dynamic Value-Density Allocation system governed by a Real-Time Scarcity Index to ensure that water is distributed based on its socio-economic utility while strictly adhering to the ecological limits of groundwater",
-        "The region should adopt a tiered system where basic human needs are guaranteed as a public good, while surplus water is traded for industrial use, contingent upon mandatory recycling quotas that expand the total available supply."
-      ]
-    },
-    "density_greenspace": {
-      "n": 3,
-      "marker_rate": 1.0,
-      "refuses_binary_rate": 1.0,
-      "mean_third_word_count": 0.33,
-      "within_item_novelty": 1.0,
-      "open_ended": true,
-      "syntheses": [
-        "Aggregated Urbanism uses high-density zoning as a strategic shield to preserve large-scale ecological integrity from the destructive effects of urban sprawl.",
-        "Urban growth must be realized through \"Ecological Density,\" wherein green space is codified as mandatory public infrastructure rather than an optional amenity competing with residential development.",
-        "The city must treat green space as a non-negotiable public utility that serves as the biological prerequisite for high-density habitation."
-      ]
+    "llama3.2:3b": {
+      "kind": "non-reasoning",
+      "n_runs": 15,
+      "mean_marker_rate": 0.8,
+      "mean_refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.27,
+      "mean_within_item_novelty": 0.983,
+      "by_item": {
+        "battery_limits": {
+          "n": 3,
+          "marker_rate": 0.667,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.67,
+          "within_item_novelty": 1.0,
+          "open_ended": false,
+          "syntheses": [
+            "Governments should adopt a pragmatic approach to electrification, focusing on setting realistic targets, investing in research and development, and implementing supportive policies that accelerate innovation while ensuri",
+            "Governments should establish a timeline for the development of sustainable battery technologies, prioritizing both performance and safety, to facilitate a gradual transition towards electric vehicles.",
+            "**THESIS**\n\nThe strongest position the facts most directly support is that governments should mandate a phase-out of new combustion-engine cars by 2035, contingent on battery technology reaching aviation-grade energy den"
+          ]
+        },
+        "density_greenspace": {
+          "n": 3,
+          "marker_rate": 0.667,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 1.0,
+          "open_ended": true,
+          "syntheses": [
+            "**THESIS**\n\nThe strongest position the facts most directly support is that increasing urban density, particularly through upzoning, can be a key strategy for addressing housing affordability and environmental concerns. B",
+            "** A balanced approach that integrates housing density with green space preservation through targeted development strategies and phased implementation can address the competing demands of affordability, sustainability, a",
+            "** A growing city should adopt a hybrid approach that combines upzoning, vertical greening, and targeted park preservation to create denser, more sustainable, and equitable urban environments."
+          ]
+        },
+        "freshwater_alloc": {
+          "n": 3,
+          "marker_rate": 0.667,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 1.0,
+          "open_ended": true,
+          "syntheses": [
+            "**THESIS**\n\nThe strongest position the facts most directly support is that industry should have priority access to freshwater due to its significant contribution to export revenue and job generation, which are crucial fo",
+            "** The fair mechanism proposed by this synthesis balances economic importance with social impact, ensuring that agriculture's contribution to food security is recognized while industry's economic benefits are acknowledge",
+            "** A fair mechanism for allocating the region's limited freshwater would involve a tiered system that balances economic, environmental, and social considerations, prioritizing basic human needs while promoting sustainabl"
+          ]
+        },
+        "minimum_wage": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.0,
+          "within_item_novelty": 0.921,
+          "open_ended": false,
+          "syntheses": [
+            "** Raising the national minimum wage substantially should be approached with caution, taking into account the complex interplay between poverty reduction and employment impacts, and prioritizing a more comprehensive appr",
+            "** Raising the national minimum wage substantially can be an effective strategy for reducing poverty and increasing wages, but its impact on employment requires a more nuanced and sector-specific analysis that considers ",
+            "** Raising the national minimum wage substantially requires careful consideration of its long-term effects, including inflation, and can be achieved through targeted policies that index the minimum wage to inflation or a"
+          ]
+        },
+        "pluto_planet": {
+          "n": 3,
+          "marker_rate": 1.0,
+          "refuses_binary_rate": 1.0,
+          "mean_third_word_count": 0.67,
+          "within_item_novelty": 0.996,
+          "open_ended": false,
+          "syntheses": [
+            "** Pluto should be recognized as a unique and fascinating object that occupies a distinct position in our understanding of the solar system, with its own category of classification that takes into account its size, orbit",
+            "** Pluto's status as a full planet should be reevaluated based on its unique characteristics and geological activity, rather than solely relying on an arbitrary criterion like clearing its neighborhood.",
+            "** A revised definition of a planet should prioritize celestial bodies that exhibit complex geological activity, have cleared their orbital neighborhoods through gravitational dominance, and are capable of supporting lif"
+          ]
+        }
+      }
     }
   }
 }
