@@ -8,6 +8,7 @@
 * 📑 **항목별 상세 설명**: [`report/ITEMS.ko.md`](report/ITEMS.ko.md) (한국어) · [`report/ITEMS.md`](report/ITEMS.md) (English)
 * 🌐 **English version of this README**: [`README.en.md`](README.en.md)
 * 🧪 **MVP 다중모델 연구**: [`report/MVP_STUDY.ko.md`](report/MVP_STUDY.ko.md) (한국어) · [`report/MVP_STUDY.md`](report/MVP_STUDY.md) (English)
+* 🔍 **Exp 3 로컬 triad 검증**: [`report/EXP3_STUDY.ko.md`](report/EXP3_STUDY.ko.md) (한국어) · [`report/EXP3_STUDY.md`](report/EXP3_STUDY.md) (English)
 
 ---
 

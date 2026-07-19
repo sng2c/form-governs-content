@@ -1,0 +1,31 @@
+[
+  {
+    "id": "freshwater_alloc",
+    "domain": "open-ended design",
+    "neutral_facts": [
+      "A region's annual renewable freshwater is fixed; demand exceeds supply.",
+      "Agriculture uses ~70% of freshwater but contributes a small share of GDP.",
+      "Industry uses ~20% and generates most export revenue and jobs.",
+      "Urban/domestic use is ~10% but is the most politically sensitive (drinking, sanitation).",
+      "Water rights are historically allocated by prior appropriation, not by market price.",
+      "Recycling and desalination exist but are energy-intensive and costly.",
+      "Groundwater is being depleted faster than it recharges."
+    ],
+    "contested_question": "Design a fair mechanism to allocate the region's limited freshwater among agriculture, industry, and urban use.",
+    "notes": "Open-ended design with no single correct answer; forces a genuine third-way synthesis rather than picking one sector."
+  },
+  {
+    "id": "density_greenspace",
+    "domain": "open-ended design",
+    "neutral_facts": [
+      "Higher urban density lowers per-capita carbon and infrastructure cost and improves housing affordability.",
+      "Access to green space is correlated with mental health and lower heat-island mortality.",
+      "Land is finite; every square meter of green space is a square meter not built for housing.",
+      "Low-income residents are most harmed by both housing shortages and lack of green space.",
+      "Upzoning politically mobilizes existing homeowners; preserving parks mobilizes environmentalists.",
+      "Vertical greening (roofs/walls) provides partial benefits but cannot replace ground-level parks."
+    ],
+    "contested_question": "How should a growing city balance housing density with green space?",
+    "notes": "Open-ended design forcing a synthetic resolution, not a yes/no on density."
+  }
+]

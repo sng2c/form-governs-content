@@ -1,0 +1,77 @@
+{
+  "overall": {
+    "model": "gemma4:12b-mlx",
+    "n_runs": 15,
+    "mean_marker_rate": 1.0,
+    "mean_refuses_binary_rate": 1.0,
+    "mean_third_word_count": 0.33,
+    "mean_within_item_novelty": 0.979
+  },
+  "by_item": {
+    "battery_limits": {
+      "n": 3,
+      "marker_rate": 1.0,
+      "refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.33,
+      "within_item_novelty": 1.0,
+      "open_ended": false,
+      "syntheses": [
+        "The mandate should be tied to independent, sector-specific utility thresholds rather than aviation-grade milestones to ensure that car-market scaling is not stifled by external technical requirements.",
+        "The government should replace a single-milestone contingency with a Dynamic Technological Readiness Framework that ties phase-out schedules to verified multi-chemistry safety and density milestones.",
+        "Governments should mandate a phase-out of combustion engines based on passenger-vehicle viability while maintaining a separate, non-contingent industrial track for aviation-grade battery development."
+      ]
+    },
+    "minimum_wage": {
+      "n": 3,
+      "marker_rate": 1.0,
+      "refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.0,
+      "within_item_novelty": 0.94,
+      "open_ended": false,
+      "syntheses": [
+        "A substantial minimum wage raise is supported only when integrated into a broader economic strategy that ensures labor demand scales alongside rising labor costs.",
+        "The evidence supports a substantial minimum wage increase provided it is implemented as a dynamic, indexed floor that accounts for sector-specific elasticities and inflationary erosion.",
+        "A substantial minimum wage increase is supported only as a context-dependent institutional tool that must be dynamically adjusted to the specific structural realities of individual labor markets."
+      ]
+    },
+    "pluto_planet": {
+      "n": 3,
+      "marker_rate": 1.0,
+      "refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.67,
+      "within_item_novelty": 1.0,
+      "open_ended": false,
+      "syntheses": [
+        "Pluto should be reclassified as a planet under a revised definition that defines planethood by geophysical complexity rather than orbital clearance.",
+        "The question of whether Pluto is a planet is a category error; the solution is to replace static definitions with a dynamic taxonomy based on systemic dominance.",
+        "A planet should be defined by its internal geological and gravitational autonomy rather than its external orbital dominance."
+      ]
+    },
+    "freshwater_alloc": {
+      "n": 3,
+      "marker_rate": 1.0,
+      "refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.33,
+      "within_item_novelty": 0.953,
+      "open_ended": true,
+      "syntheses": [
+        "The region must transition from a model of static allocation to a dynamic, tiered system where basic human and ecological needs are guaranteed as a non-negotiable floor, and all subsequent usage is governed by a \"Net-Zero Extraction\" mandat",
+        "The region should adopt a Dynamic Value-Density Allocation system governed by a Real-Time Scarcity Index to ensure that water is distributed based on its socio-economic utility while strictly adhering to the ecological limits of groundwater",
+        "The region should adopt a tiered system where basic human needs are guaranteed as a public good, while surplus water is traded for industrial use, contingent upon mandatory recycling quotas that expand the total available supply."
+      ]
+    },
+    "density_greenspace": {
+      "n": 3,
+      "marker_rate": 1.0,
+      "refuses_binary_rate": 1.0,
+      "mean_third_word_count": 0.33,
+      "within_item_novelty": 1.0,
+      "open_ended": true,
+      "syntheses": [
+        "Aggregated Urbanism uses high-density zoning as a strategic shield to preserve large-scale ecological integrity from the destructive effects of urban sprawl.",
+        "Urban growth must be realized through \"Ecological Density,\" wherein green space is codified as mandatory public infrastructure rather than an optional amenity competing with residential development.",
+        "The city must treat green space as a non-negotiable public utility that serves as the biological prerequisite for high-density habitation."
+      ]
+    }
+  }
+}

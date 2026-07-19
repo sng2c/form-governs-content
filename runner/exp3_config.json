@@ -1,0 +1,11 @@
+{
+  "endpoint": "http://localhost:11434/v1/chat/completions",
+  "api_key_env": "OLLAMA_API_KEY",
+  "model": "gemma4:12b-mlx",
+  "temperature": 0.3,
+  "seed": 42,
+  "max_tokens": 4096,
+  "n_repeats": 3,
+  "form": "dialectical_triad",
+  "content_items": ["battery_limits", "minimum_wage", "pluto_planet", "freshwater_alloc", "density_greenspace"]
+}
