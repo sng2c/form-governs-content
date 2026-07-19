@@ -8,6 +8,7 @@ clothed in **different forms**, does the model's output change not merely in sty
 in *substantive content* — its verdicts and conclusions?
 
 📖 **Detailed report**: [`report/REPORT.md`](report/REPORT.md) (English) · [`report/REPORT.ko.md`](report/REPORT.ko.md) (한국어)
+📑 **Per-item notes**: [`report/ITEMS.md`](report/ITEMS.md) (English) · [`report/ITEMS.ko.md`](report/ITEMS.ko.md) (한국어)
 🌐 **한국어 README**: [`README.md`](README.md)
 
 ---
@@ -31,7 +32,7 @@ in *substantive content* — its verdicts and conclusions?
 
 - **3 controlled items**: `battery_limits` (tech policy), `minimum_wage` (economics),
   `pluto_planet` (science classification). Each is built from facts supporting both sides
-  so that form has room to determine the verdict.
+  so that form has room to determine the verdict. *Per-item detail: [`report/ITEMS.md`](report/ITEMS.md).*
 - **8 forms, 2 families**:
   - Rearrangement (5): `bullet_list`, `numbered_steps`, `json_schema`, `qa_pairs`, `syllogism`.
   - Generative (3): `dialectical_triad` (thesis–antithesis–synthesis), `socratic_dialogue`, `red_blue_debate`.
@@ -107,7 +108,9 @@ form-governs-content/
 ├── analyze/                extract.py (conclusion) / analyze.py (metrics)
 ├── report/
 │   ├── REPORT.md           detailed report (English)
-│   └── REPORT.ko.md        detailed report (한국어)
+│   ├── REPORT.ko.md        detailed report (한국어)
+│   ├── ITEMS.md            per-item notes (English)
+│   └── ITEMS.ko.md         per-item notes (한국어)
 └── data/                   raw_runs.jsonl + analysis.json (gitignored)
 ```
 

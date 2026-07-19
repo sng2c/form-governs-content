@@ -5,6 +5,7 @@
 헤겔의 명제를 LLM 안에서 경험적으로 시험한 파일럿 연구입니다. **같은 중립 사실과 같은 질문**을 주고 **형식만 바꿨을 때**, 모델의 산출물이 단지 화법만 바뀌는 게 아니라 **실질적 내용(판정·결론)이 달라지는가?**
 
 📖 **상세 리포트**: [`report/REPORT.ko.md`](report/REPORT.ko.md) (한국어) · [`report/REPORT.md`](report/REPORT.md) (English)
+📑 **항목별 상세 설명**: [`report/ITEMS.ko.md`](report/ITEMS.ko.md) (한국어) · [`report/ITEMS.md`](report/ITEMS.md) (English)
 🌐 **English version of this README**: [`README.en.md`](README.en.md)
 
 ---
@@ -26,7 +27,7 @@
 | 프롬프트 형식 | | ✔ (8개 템플릿, 2개 계열) |
 | 모델·온도·시드·반복 | ✔ (gpt-oss:120b, T=0.3, seed 42–46, 5회 반복) | |
 
-- **3개 통제 항목**: `battery_limits`(기술 정책), `minimum_wage`(경제학), `pluto_planet`(과학 분류). 각 항목은 양쪽 모두를 지지하는 사실들로 구성해 형식이 판정을 좌우할 여지를 둠.
+- **3개 통제 항목**: `battery_limits`(기술 정책), `minimum_wage`(경제학), `pluto_planet`(과학 분류). 각 항목은 양쪽 모두를 지지하는 사실들로 구성해 형식이 판정을 좌우할 여지를 둠. *항목별 상세 설명은 [`report/ITEMS.ko.md`](report/ITEMS.ko.md) 참고.*
 - **8개 형식, 2개 계열**:
   - 재배열형 5개 — `bullet_list`, `numbered_steps`, `json_schema`, `qa_pairs`, `syllogism` (내용을 재배열)
   - 생성형 3개 — `dialectical_triad`(정-반-합), `socratic_dialogue`, `red_blue_debate` (내용을 모순을 통해 발전)
@@ -83,7 +84,9 @@ form-governs-content/
 ├── analyze/                extract.py(결론 추출) / analyze.py(메트릭)
 ├── report/
 │   ├── REPORT.md           상세 리포트 (English)
-│   └── REPORT.ko.md        상세 리포트 (한국어)
+│   ├── REPORT.ko.md        상세 리포트 (한국어)
+│   ├── ITEMS.md            항목별 상세 (English)
+│   └── ITEMS.ko.md         항목별 상세 (한국어)
 └── data/                   raw_runs.jsonl + analysis.json (git 제외)
 ```
 

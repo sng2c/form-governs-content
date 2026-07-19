@@ -1,6 +1,6 @@
 # Hegel's "Form Governs Content" — Empirical Test in LLMs
 
-> 한국어 버전: [`REPORT.ko.md`](REPORT.ko.md)
+> 한국어 버전: [`REPORT.ko.md`](REPORT.ko.md) · Per-item notes: [`ITEMS.md`](ITEMS.md)
 
 ## The thesis (Hegel)
 In Hegel's *Science of Logic*, form is not an indifferent vessel into which content
@@ -15,7 +15,8 @@ question** but clothing them in **different forms** should change the model's
 
 ## Design (what we did)
 - 3 controlled content items (neutral facts + a genuinely contested question):
-  `battery_limits`, `minimum_wage`, `pluto_planet`.
+  `battery_limits`, `minimum_wage`, `pluto_planet`. *Per-item questions, facts, design
+  rationale, and per-form conclusions are detailed in [`ITEMS.md`](ITEMS.md).*
 - 8 forms, in two families:
   - *Rearrangement* (bullets, steps, JSON, Q&A, syllogism): content is re-laid-out.
   - *Generative* (dialectical triad, Socratic dialogue, red/blue debate): content is

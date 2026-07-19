@@ -1,6 +1,6 @@
 # 형식이 내용을 지배한다 — LLM 안에서의 경험적 검증 (상세 리포트)
 
-> 영문 버전: [`REPORT.md`](REPORT.md)
+> 영문 버전: [`REPORT.md`](REPORT.md) · 항목별 상세: [`ITEMS.ko.md`](ITEMS.ko.md)
 
 ## 헤겔의 명제
 헤겔의 《논리학》에서 형식은 내용을 담는 무관한 그릇이 아니다. 형식은 내용의
@@ -15,7 +15,7 @@ regiert den Inhalt": 형식이 내용을 지배한다.
 
 ## 무엇을 했는가 (설계)
 - 3개 통제 항목(중립 사실 + 진짜 쟁점 질문): `battery_limits`, `minimum_wage`,
-  `pluto_planet`.
+  `pluto_planet`. *각 항목의 질문·사실·설계 의도·형식별 결론은 [`ITEMS.ko.md`](ITEMS.ko.md)에 상세.*
 - 8개 형식, 2개 계열:
   - *재배열형*(불릿·단계·JSON·Q&A·삼단논법): 내용을 재배열.
   - *생성형*(변증법 triad·소크라테스 대화·찬반 토론): 내용을 모순을 통해 발전.
