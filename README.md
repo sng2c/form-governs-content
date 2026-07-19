@@ -4,10 +4,10 @@
 
 헤겔의 명제를 LLM 안에서 경험적으로 시험한 파일럿 연구입니다. **같은 중립 사실과 같은 질문**을 주고 **형식만 바꿨을 때**, 모델의 산출물이 단지 화법만 바뀌는 게 아니라 **실질적 내용(판정·결론)이 달라지는가?**
 
-📖 **상세 리포트**: [`report/REPORT.ko.md`](report/REPORT.ko.md) (한국어) · [`report/REPORT.md`](report/REPORT.md) (English)
-📑 **항목별 상세 설명**: [`report/ITEMS.ko.md`](report/ITEMS.ko.md) (한국어) · [`report/ITEMS.md`](report/ITEMS.md) (English)
-🌐 **English version of this README**: [`README.en.md`](README.en.md)
-🧪 **MVP 다중모델 연구**: [`report/MVP_STUDY.ko.md`](report/MVP_STUDY.ko.md) (한국어) · [`report/MVP_STUDY.md`](report/MVP_STUDY.md) (English)
+* 📖 **상세 리포트**: [`report/REPORT.ko.md`](report/REPORT.ko.md) (한국어) · [`report/REPORT.md`](report/REPORT.md) (English)
+* 📑 **항목별 상세 설명**: [`report/ITEMS.ko.md`](report/ITEMS.ko.md) (한국어) · [`report/ITEMS.md`](report/ITEMS.md) (English)
+* 🌐 **English version of this README**: [`README.en.md`](README.en.md)
+* 🧪 **MVP 다중모델 연구**: [`report/MVP_STUDY.ko.md`](report/MVP_STUDY.ko.md) (한국어) · [`report/MVP_STUDY.md`](report/MVP_STUDY.md) (English)
 
 ---
 
