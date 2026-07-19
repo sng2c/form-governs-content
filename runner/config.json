@@ -1,0 +1,20 @@
+{
+  "endpoint": "https://ollama.com/v1/chat/completions",
+  "model": "gpt-oss:120b",
+  "api_key_env": "OLLAMA_API_KEY",
+  "temperature": 0.3,
+  "seed": 42,
+  "n_repeats": 5,
+  "max_tokens": 4096,
+  "forms": [
+    "bullet_list",
+    "numbered_steps",
+    "json_schema",
+    "qa_pairs",
+    "syllogism",
+    "dialectical_triad",
+    "socratic_dialogue",
+    "red_blue_debate"
+  ],
+  "content_items": ["battery_limits", "minimum_wage", "pluto_planet"]
+}

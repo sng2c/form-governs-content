@@ -1,0 +1,44 @@
+[
+  {
+    "id": "battery_limits",
+    "domain": "technology policy",
+    "neutral_facts": [
+      "Lithium-ion battery energy density has roughly doubled since 2010.",
+      "Current commercial lithium-ion cells reach about 250-300 Wh/kg.",
+      "Solid-state battery prototypes have demonstrated 400-500 Wh/kg in labs but are not yet mass-produced.",
+      "Battery cost per kWh has fallen by about 90% over the last decade.",
+      "Aviation requires roughly 500-1000 Wh/kg for meaningful electric flight range.",
+      "Battery fires, while rare, release energy rapidly and are difficult to extinguish."
+    ],
+    "contested_question": "Should governments mandate a phase-out of new combustion-engine cars by 2035, contingent on battery technology reaching aviation-grade energy density first?",
+    "notes": "Designed so that the facts support both a 'yes, soon feasible' and a 'no, premature' conclusion. Lets form drive the verdict."
+  },
+  {
+    "id": "minimum_wage",
+    "domain": "economics",
+    "neutral_facts": [
+      "A 2019 CBO study estimated a US federal minimum-wage raise to $15 would lift 1.3M out of poverty and reduce employment by 1.3M.",
+      "Card and Krueger (1994) found no significant employment loss in fast food after a New Jersey minimum-wage increase.",
+      "Neoclassical theory predicts reduced employment when a wage floor exceeds market-clearing wages.",
+      "Monopsony models predict a minimum wage can increase both wages and employment.",
+      "Empirical estimates of employment elasticities cluster near zero but vary widely by sector and study.",
+      "Inflation erodes the real value of any fixed nominal minimum wage over time."
+    ],
+    "contested_question": "Does the balance of evidence support raising the national minimum wage substantially?",
+    "notes": "Genuine empirical disagreement with reputable studies on both sides. Form may select which evidence is foregrounded."
+  },
+  {
+    "id": "pluto_planet",
+    "domain": "science classification",
+    "neutral_facts": [
+      "The IAU defined a planet in 2006 as a body that orbits the Sun, is nearly round, and has cleared its neighborhood.",
+      "Pluto has not cleared its orbital neighborhood and was reclassified as a dwarf planet.",
+      "Pluto has five known moons and a complex geology with nitrogen-ice plains and water-ice mountains.",
+      "The New Horizons flyby in 2015 revealed Pluto is geologically active.",
+      "Some planetary scientists argue 'cleared neighborhood' is not a scientifically robust criterion.",
+      "There are at least eight other known dwarf-planet candidates in the Kuiper Belt."
+    ],
+    "contested_question": "Should Pluto be reclassified as a full planet under a revised definition?",
+    "notes": "A classification dispute where form (syllogism vs dialectic) may resolve the ambiguity differently."
+  }
+]

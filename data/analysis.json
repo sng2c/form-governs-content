@@ -1,0 +1,307 @@
+{
+  "by_item": {
+    "battery_limits": {
+      "within_form_variance": {
+        "bullet_list": 0.7578316896359856,
+        "dialectical_triad": 0.8886237852218886,
+        "json_schema": 0.7805653460538929,
+        "numbered_steps": 0.9674924617203502,
+        "qa_pairs": 0.42051021903984837,
+        "red_blue_debate": 0.7557998645289213,
+        "socratic_dialogue": 0.8983574455611597,
+        "syllogism": 0.7328834389463121
+      },
+      "across_form_variance": 0.9051136536551957,
+      "ratio_across_over_within": 1.1674998736774707,
+      "novelty_by_form": {
+        "bullet_list": 1.0,
+        "numbered_steps": 1.0,
+        "json_schema": 1.0,
+        "qa_pairs": 1.0,
+        "syllogism": 1.0,
+        "dialectical_triad": 1.0,
+        "socratic_dialogue": 1.0,
+        "red_blue_debate": 1.0
+      }
+    },
+    "minimum_wage": {
+      "within_form_variance": {
+        "bullet_list": 0.660800484468705,
+        "dialectical_triad": 0.8800965338941638,
+        "json_schema": 0.8823876011938628,
+        "numbered_steps": 0.9185769349775799,
+        "qa_pairs": 0.9252186712834133,
+        "red_blue_debate": 0.7989692418079292,
+        "socratic_dialogue": 0.7499251055628827,
+        "syllogism": 0.16244690527576627
+      },
+      "across_form_variance": 0.9366006870141854,
+      "ratio_across_over_within": 1.2533083395181073,
+      "novelty_by_form": {
+        "bullet_list": 1.0,
+        "numbered_steps": 1.0,
+        "json_schema": 1.0,
+        "qa_pairs": 1.0,
+        "syllogism": 1.0,
+        "dialectical_triad": 1.0,
+        "socratic_dialogue": 1.0,
+        "red_blue_debate": 1.0
+      }
+    },
+    "pluto_planet": {
+      "within_form_variance": {
+        "bullet_list": 0.7130122700902988,
+        "dialectical_triad": 0.9005897407788371,
+        "json_schema": 0.7721180708896582,
+        "numbered_steps": 0.9282451560265986,
+        "qa_pairs": 0.8509176221639814,
+        "red_blue_debate": 0.8874044322383903,
+        "socratic_dialogue": 0.8559362610719614,
+        "syllogism": 0.49188757581745096
+      },
+      "across_form_variance": 0.9176847036689875,
+      "ratio_across_over_within": 1.1470859616793025,
+      "novelty_by_form": {
+        "bullet_list": 1.0,
+        "numbered_steps": 1.0,
+        "json_schema": 1.0,
+        "qa_pairs": 1.0,
+        "syllogism": 1.0,
+        "dialectical_triad": 1.0,
+        "socratic_dialogue": 1.0,
+        "red_blue_debate": 1.0
+      }
+    }
+  },
+  "overall": {
+    "within_form_variance": 0.77419153576041,
+    "across_form_variance": 0.9197996814461229,
+    "ratio_across_over_within": 1.188077677112159,
+    "hegel_h1_holds": false,
+    "family_within_variance": {
+      "rearrangement": 0.7309929631722468,
+      "generative": 0.8461891567406815
+    },
+    "family_novelty_rate": {
+      "rearrangement": 1.0,
+      "generative": 1.0
+    },
+    "verdict_divergence": 0.283,
+    "hegel_h1_verdict": true
+  },
+  "verdict_analysis": {
+    "battery_limits": {
+      "verdict_distribution": {
+        "no_contingency": 32,
+        "pro_contingency": 8
+      },
+      "divergence_score": 0.2,
+      "per_form": {
+        "bullet_list": {
+          "modal_label": "no_contingency",
+          "modal_share": 1.0,
+          "labels": {
+            "no_contingency": 5
+          }
+        },
+        "numbered_steps": {
+          "modal_label": "no_contingency",
+          "modal_share": 1.0,
+          "labels": {
+            "no_contingency": 5
+          }
+        },
+        "json_schema": {
+          "modal_label": "no_contingency",
+          "modal_share": 0.6,
+          "labels": {
+            "pro_contingency": 2,
+            "no_contingency": 3
+          }
+        },
+        "qa_pairs": {
+          "modal_label": "no_contingency",
+          "modal_share": 0.8,
+          "labels": {
+            "pro_contingency": 1,
+            "no_contingency": 4
+          }
+        },
+        "syllogism": {
+          "modal_label": "no_contingency",
+          "modal_share": 0.6,
+          "labels": {
+            "pro_contingency": 2,
+            "no_contingency": 3
+          }
+        },
+        "dialectical_triad": {
+          "modal_label": "no_contingency",
+          "modal_share": 1.0,
+          "labels": {
+            "no_contingency": 5
+          }
+        },
+        "socratic_dialogue": {
+          "modal_label": "no_contingency",
+          "modal_share": 0.8,
+          "labels": {
+            "no_contingency": 4,
+            "pro_contingency": 1
+          }
+        },
+        "red_blue_debate": {
+          "modal_label": "no_contingency",
+          "modal_share": 0.6,
+          "labels": {
+            "no_contingency": 3,
+            "pro_contingency": 2
+          }
+        }
+      }
+    },
+    "minimum_wage": {
+      "verdict_distribution": {
+        "qualified": 23,
+        "support": 14,
+        "oppose": 3
+      },
+      "divergence_score": 0.425,
+      "per_form": {
+        "bullet_list": {
+          "modal_label": "qualified",
+          "modal_share": 1.0,
+          "labels": {
+            "qualified": 5
+          }
+        },
+        "numbered_steps": {
+          "modal_label": "qualified",
+          "modal_share": 0.8,
+          "labels": {
+            "support": 1,
+            "qualified": 4
+          }
+        },
+        "json_schema": {
+          "modal_label": "oppose",
+          "modal_share": 0.4,
+          "labels": {
+            "oppose": 2,
+            "support": 1,
+            "qualified": 2
+          }
+        },
+        "qa_pairs": {
+          "modal_label": "qualified",
+          "modal_share": 0.6,
+          "labels": {
+            "support": 1,
+            "oppose": 1,
+            "qualified": 3
+          }
+        },
+        "syllogism": {
+          "modal_label": "qualified",
+          "modal_share": 0.8,
+          "labels": {
+            "qualified": 4,
+            "support": 1
+          }
+        },
+        "dialectical_triad": {
+          "modal_label": "qualified",
+          "modal_share": 1.0,
+          "labels": {
+            "qualified": 5
+          }
+        },
+        "socratic_dialogue": {
+          "modal_label": "support",
+          "modal_share": 1.0,
+          "labels": {
+            "support": 5
+          }
+        },
+        "red_blue_debate": {
+          "modal_label": "support",
+          "modal_share": 1.0,
+          "labels": {
+            "support": 5
+          }
+        }
+      }
+    },
+    "pluto_planet": {
+      "verdict_distribution": {
+        "reclassify": 31,
+        "keep_dwarf": 9
+      },
+      "divergence_score": 0.225,
+      "per_form": {
+        "bullet_list": {
+          "modal_label": "keep_dwarf",
+          "modal_share": 0.6,
+          "labels": {
+            "reclassify": 2,
+            "keep_dwarf": 3
+          }
+        },
+        "numbered_steps": {
+          "modal_label": "reclassify",
+          "modal_share": 0.8,
+          "labels": {
+            "keep_dwarf": 1,
+            "reclassify": 4
+          }
+        },
+        "json_schema": {
+          "modal_label": "reclassify",
+          "modal_share": 0.8,
+          "labels": {
+            "keep_dwarf": 1,
+            "reclassify": 4
+          }
+        },
+        "qa_pairs": {
+          "modal_label": "reclassify",
+          "modal_share": 0.8,
+          "labels": {
+            "reclassify": 4,
+            "keep_dwarf": 1
+          }
+        },
+        "syllogism": {
+          "modal_label": "reclassify",
+          "modal_share": 1.0,
+          "labels": {
+            "reclassify": 5
+          }
+        },
+        "dialectical_triad": {
+          "modal_label": "reclassify",
+          "modal_share": 1.0,
+          "labels": {
+            "reclassify": 5
+          }
+        },
+        "socratic_dialogue": {
+          "modal_label": "reclassify",
+          "modal_share": 1.0,
+          "labels": {
+            "reclassify": 5
+          }
+        },
+        "red_blue_debate": {
+          "modal_label": "keep_dwarf",
+          "modal_share": 0.6,
+          "labels": {
+            "keep_dwarf": 3,
+            "reclassify": 2
+          }
+        }
+      }
+    },
+    "_overall_divergence": 0.283
+  }
+}
