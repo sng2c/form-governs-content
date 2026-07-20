@@ -127,6 +127,22 @@ def ask(prompt, default=None):
     return s if s else default
 
 
+def paste_until_dot(prompt):
+    """Read pasted lines until a line that is just '.' (the terminator).
+    Lets the user paste a multi-line block (question or facts) and end with a lone '.' line."""
+    print(prompt)
+    lines = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        if line.strip() == ".":
+            break
+        lines.append(line)
+    return lines
+
+
 # ---------- one full run ----------
 
 def run_one(cfg, purpose, content, r_override, auto, no_run):
@@ -217,16 +233,12 @@ def interactive(cfg, auto, no_run):
             print("  3) 전제 드러내기   - 숨은 가정을 찾아낼 때")
             pc = ask("선택 [1/2/3, 기본 2]: ", "2")
             purpose = PURPOSE_LABELS.get(pc, "synthesize")
-            question = ask("질문(한 줄): ")
+            q_lines = paste_until_dot("질문을 붙여넣으세요 (여러 줄 가능; 마지막에 . 만 적힌 줄로 종료):")
+            question = " ".join(l.strip() for l in q_lines if l.strip())
             if not question:
                 print("질문이 필요합니다."); continue
-            print("사실을 한 줄씩 입력 (빈 줄로 종료):")
-            facts = []
-            while True:
-                f = input("  - ").strip()
-                if not f:
-                    break
-                facts.append(f)
+            f_lines = paste_until_dot("사실을 붙여넣으세요 (한 줄당 한 사실; 마지막에 . 만 적힌 줄로 종료):")
+            facts = [l.strip() for l in f_lines if l.strip()]
             if not facts:
                 print("사실이 최소 1개 필요합니다."); continue
             r_override = None
