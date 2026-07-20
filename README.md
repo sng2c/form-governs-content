@@ -10,6 +10,7 @@
 * 🧪 **MVP 다중모델 연구**: [`report/MVP_STUDY.ko.md`](report/MVP_STUDY.ko.md) (한국어) · [`report/MVP_STUDY.md`](report/MVP_STUDY.md) (English)
 * 🔍 **Exp 3 로컬 triad 검증**: [`report/EXP3_STUDY.ko.md`](report/EXP3_STUDY.ko.md) (한국어) · [`report/EXP3_STUDY.md`](report/EXP3_STUDY.md) (English)
 * 🎛️ **정합 뷰(v0.3.0 제어판)**: [`report/CONTROL_PANEL.md`](report/CONTROL_PANEL.md) (한국어) · [`report/CONTROL_PANEL.en.md`](report/CONTROL_PANEL.en.md) (English)
+📐 **제어판 설계 명문**: [`report/CONTROL_PANEL_SPEC.md`](report/CONTROL_PANEL_SPEC.md) (한국어) · [`report/CONTROL_PANEL_SPEC.en.md`](report/CONTROL_PANEL_SPEC.en.md) (English)
 
 ---
 
