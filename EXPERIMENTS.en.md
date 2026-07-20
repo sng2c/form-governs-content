@@ -64,8 +64,9 @@ Exp 1's forms/items and validates the Pruner linear spine.
   $\Phi$ staying a black box is justified. (3) **Aufhebung (triad synthesis)** is
   reproduced across all model types (novelty 0.71–0.89, H1a robust).
 
-## Derived artifact — routing matrix (all three experiments)
+## Derived artifacts — routing matrix · session log (all three experiments)
 - [`report/ROUTING.ko.md`](report/ROUTING.ko.md) · [`report/ROUTING.md`](report/ROUTING.md) — **purpose-to-model routing matrix** distilled from Exp1/2/3 data. A data-grounded, purpose-bifurcated version that corrects the Pruner v1 matrix's self-contradiction.
+- [`report/PRUNER_LOG.md`](report/PRUNER_LOG.md) — `pruner-arch` pruning session log (Layer 1→2→3). **Read this first on PC resume to restore context.** Currently waiting at Layer 3 `[I_5: Σ]`.
 
 ## Shared infrastructure (both experiments)
 - `runner/forms.py` — 8 form templates + family classification
