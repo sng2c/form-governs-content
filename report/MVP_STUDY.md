@@ -32,22 +32,30 @@ requirements of the dialectical form (markers/sections). Only general-moe (kimi/
 occasionally drops a marker (0.75/0.875). "Form governs structure" is largely model-independent.
 
 ### 2. But form's governance of the *verdict* is model-dependent
-**`minimum_wage / decide` (red_blue_debate)** — same form, models split:
-| model | verdict |
-|---|---|
-| gpt-oss:120b | **support** |
-| kimi-k2.6 | **support** |
-| minimax-m3 | **support** |
-| qwen3.5:397b | **support** |
-| gemma4:31b | **oppose** — "1.3M job loss offsets poverty-reduction gains, validating neoclassical concerns" |
-| deepseek-v4-flash | **oppose** — "projected job losses significant, empirical literature mixed" |
-| glm-5.2 | **oppose** — "equal trade-off of 1.3M lifted vs 1.3M jobs lost" |
-| mistral-large-3:675b | **qualified** — "evidence favors a moderate increase, but a $15 national mandate is too high" |
+**`minimum_wage / decide` (red_blue_debate)** — same form, models split
+(2-repeat stance distribution, per `decide_stance_by_model` in `data/mvp_analysis.json` —
+the keyword-stance heuristic in `analyze_mvp.py`; a qualitative $J$ re-check is warranted):
+
+| model | 2-repeat stance | summary |
+|---|---|---|
+| **gemma4:31b** | **yes 2 · qualified 0 · no 0** | **decisive support (sole)** |
+| deepseek-v4-flash | qualified 2 | hedge |
+| minimax-m3 | qualified 2 | hedge |
+| mistral-large-3:675b | qualified 2 | hedge |
+| gpt-oss:120b | yes 1 · qualified 1 | mixed |
+| kimi-k2.6 | yes 1 · qualified 1 | mixed |
+| qwen3.5:397b | yes 1 · qualified 1 | mixed |
+| glm-5.2 | yes 1 · qualified 1 | mixed |
 
 → **On the same contested content under the same red/blue form, the verdict splits by
-model**: gpt-oss/kimi/minimax/qwen → support; gemma/deepseek/glm → oppose. By contrast, on
-the clearer item `pluto_planet`, 7/8 models converge on "reclassify" (yes) — only mistral
-is mixed.
+model**: a **decisive "yes (support)" 2/2 is the small-efficient `gemma4:31b` alone**, and —
+regardless of reasoning — the other 7 models each include at least one `qualified` (hedge).
+(An earlier version framed this as a support/oppose 4:4 split, but that reflected an older
+stance heuristic and is not consistent with `mvp_analysis.json`; the table above is the
+data-grounded authoritative version.) The core conclusion holds: even under the same form
+the *verdict* is model-dependent → which is exactly why $\Phi$ stays a black box. By contrast,
+on the clearer item `pluto_planet`, 7/8 models converge on "reclassify (yes) 2/2" — only
+mistral is mixed (yes 1 + qualified 1).
 
 ⇒ **Form governs structure model-independently, but the verdict is model-dependent on
 contested items** — which is exactly why $\Phi$ was left a black box: a single bound
@@ -55,7 +63,14 @@ template cannot guarantee the *correct* verdict across all models. The **human-$
 remains necessary on contested items**.
 
 ### 3. Aufhebung (synthesis) is reproduced across all model types (H1a)
-New-proposition rate for `synthesize / dialectical_triad` (shingle novelty vs other models' conclusions):
+New-proposition rate for `synthesize / dialectical_triad` (**cross-model novelty** — a model's conclusion shingles not present in the *other 7 models'* conclusions):
+
+> ⚠️ **Novelty-definition caveat**: the `synth_novelty` here is **cross-model** (distinctiveness
+> vs other models). It is **not comparable** to Exp 3's `within_item_novelty` (**same model,
+> same item, 3-repeat dispersion**). Do not place Exp3 `gemma3:1b`'s 0.995 (a different abstract
+> phrasing each repeat) on the same axis as the 0.894 here (distinctiveness vs other models)
+> and conclude "local 1B beats cloud 120B at creativity" — on the cross-model metric,
+> `gemma4:31b`=0.764 is in fact the lowest in this table.
 | model | novelty | conclusion example |
 |---|---|---|
 | gpt-oss:120b | **0.894** | "dynamically indexed, regionally differentiated wage + targeted subsidies + expanded EITC" |
@@ -76,9 +91,11 @@ system") instead of a bare yes/no. Hegel's H1a is robust across model types.
 - Both thinking (gpt-oss/deepseek/glm/kimi/minimax/qwen) and non-thinking (gemma4:31b,
   mistral-large-3:675b) models follow the form.
 - Most verbose: kimi-k2.6 (10,016 chars); most terse: gemma4:31b (2,695 chars).
-- Note: the non-thinking small model gemma commits to the most decisive "oppose" under
-  `decide` — **less reasoning ⇒ more exposed to the form's binary structure (red/blue)**,
-  while thinking models hedge.
+- Note: the non-thinking small model gemma commits to the most decisive "yes (support)" 2/2
+  under `decide`, while the reasoning models hedge with `qualified` — **less reasoning ⇒ more
+  exposed to the form's binary structure (red/blue)** and more likely to stamp a decisive
+  stance. This "decisiveness", however, rests on the keyword-stance heuristic in
+  `analyze_mvp.py`; a qualitative $J$ re-check is warranted.
 
 ## Interpretation — validating the MVP design bet
 1. **The linear spine holds**: purpose→bind→run realizes the form's *structure* stably

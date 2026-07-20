@@ -27,24 +27,39 @@ $$P \\xrightarrow{\\text{바인딩}} T_k \\xrightarrow{M} O \\xrightarrow{\\text
 → MVP의 **선형 척춄은 모델 타입에 robust**: 거의 모든 모델이 변증법 형식의 구조적 요구(마커·섹션)를 따른다. general-moe(kimi/qwen)만 간혹 마커 누락(0.75/0.875). 즉 "형식이 구조를 지배한다"는 모델에 크게 의존하지 않는다.
 
 ### 2. 하지만 형식의 *판정(verdict)* 지배는 모델 의존적이다
-**`minimum_wage / decide` (red_blue_debate)** 에서 *같은 형식* 하에 모델이 갈린다:
-| 모델 | 판정 |
-|---|---|
-| gpt-oss:120b | **지지(support)** |
-| kimi-k2.6 | **지지** |
-| minimax-m3 | **지지** |
-| qwen3.5:397b | **지지** |
-| gemma4:31b | **반대(oppose)** — "1.3M 일자리 손실이 빈곤 감소 이익을 상쇄, 신고전파 우려 검증" |
-| deepseek-v4-flash | **반대** — "예상 일자리 손실 유의미·실증 엇갈려" |
-| glm-5.2 | **반대** — "1.3M 빈곤 탈출 vs 1.3M 일자리 손실의 동등한 트레이드오프" |
-| mistral-large-3:675b | **qualified** — "증거는 점진적 인상 지지하나 $15 전국 의무화는 너무 높아" |
+**`minimum_wage / decide` (red_blue_debate)** 에서 *같은 형식* 하에 모델이 갈린다
+(2회 시행의 stance 분포, `data/mvp_analysis.json`의 `decide_stance_by_model` 기준 —
+`analyze_mvp.py`의 키워드 stance 휴리스틱 결과로 정성 $J$ 재검증 필요):
 
-→ **같은 쟁점적 내용·같은 red/blue 형식에서 모델에 따라 판정이 갈린다**: gpt-oss/kimi/minimax/qwen은 "지지", gemma/deepseek/glm은 "반대". 반면 명확한 항목 `pluto_planet`에서는 7/8 모델이 "재분류(yes)"로 수렴(mistral만 혼합).
+| 모델 | 2회 stance 분포 | 요약 |
+|---|---|---|
+| **gemma4:31b** | **yes 2 · qualified 0 · no 0** | **단호 지지 (유일)** |
+| deepseek-v4-flash | qualified 2 | 유보 |
+| minimax-m3 | qualified 2 | 유보 |
+| mistral-large-3:675b | qualified 2 | 유보 |
+| gpt-oss:120b | yes 1 · qualified 1 | 혼합 |
+| kimi-k2.6 | yes 1 · qualified 1 | 혼합 |
+| qwen3.5:397b | yes 1 · qualified 1 | 혼합 |
+| glm-5.2 | yes 1 · qualified 1 | 혼합 |
+
+→ **같은 쟁점적 내용·같은 red/blue 형식에서 모델에 따라 판정이 갈린다**:
+**단호한 "yes(지지)" 2/2는 small-efficient `gemma4:31b` 단독**이고, reasoning 여부와 무관하게
+나머지 7개 모델은 모두 `qualified`(유보)를 1회 이상 포함. (이전 버전은 이 표를 support/oppose
+4:4 분할로 기술했으나, 이는 구 stance 휴리스틱 결과로 `mvp_analysis.json`과 정합하지 않다 —
+위 표가 데이터 기준 정본.) 핵심 결론은 동일: 같은 형식이라도 *판정*은 모델 의존적으로
+갈린다 → $\Phi$가 블랙박스로 남은 것이 정당화됨. 반면 명확한 항목 `pluto_planet`에서는
+7/8 모델이 "재분류(yes) 2/2"로 수렴(mistral만 yes 1 + qualified 1).
 
 ⇒ **형식은 구조를 모델 무관하게 지배하지만, 판정은 쟁점적 항목에서 모델 의존적**. 이것이 바로 $\\Phi$가 블랙박스로 남은 이유: 단일 바인딩된 템플릿은 모든 모델에서 *올바른* 판정을 보장하지 못한다. **인간 $J$ 게이트가 쟁점적 항목에서 여전히 필요**하다.
 
 ### 3. Aufhebung(종합)은 모든 모델 타입에서 재현된다 (H1a)
-`synthesize / dialectical_triad`의 새 명제 생성률(다른 모델 결론 대비 shingle 신규성):
+`synthesize / dialectical_triad`의 새 명제 생성률(**cross-model novelty** — 해당 모델 결론이 *다른 7개 모델 결론* 대비 갖는 shingle 신규성):
+
+> ⚠️ **novelty 정의 주의**: 본 절의 `synth_novelty`는 **cross-model**(타 모델 대비 독창성)이다.
+> Exp 3의 `within_item_novelty`(**같은 모델·같은 항목 3반복 간 분산**)과 **정의가 달라 직접 비교 불가**.
+> 예컨대 Exp3 `gemma3:1b`의 0.995(반복마다 매번 다른 추상 표현)를 본 절의 0.894(타 모델 대비
+> 독창성)와 같은 축에 올려 "로컬 1B가 클라우드 120B보다 창의적"이라 비교하면 안 된다 — 오히려
+> cross-model 기준에서는 `gemma4:31b`=0.764로 본 표 최하위다.
 | 모델 | novelty | 결론 예 |
 |---|---|---|
 | gpt-oss:120b | **0.894** | "동적 인덱싱·지역 차등 최저임금 + 표적 보조금·EITC 확대로 빈곤 탈출" |
@@ -61,7 +76,7 @@ $$P \\xrightarrow{\\text{바인딩}} T_k \\xrightarrow{M} O \\xrightarrow{\\text
 ### 4. 사고(reasoning) 여부와 장황함
 - 사고 모델(gpt-oss/deepseek/glm/kimi/minimax/qwen)과 비사고 모델(gemma4:31b, mistral-large-3:675b) 모두 형식을 따름.
 - 가장 장황: kimi-k2.6(10,016자) · 가장 간결: gemma4:31b(2,695자).
-- 주의: 비사고 소형 모델 gemma는 `decide`에서 가장 단호한 "반대"를, 사고 대형 모델들보다 단순 이항에 더 쉽게 커밋 — **사고가 덜 할수록 형식의 이항 구조(red/blue)에 더 그대로 노출**되는 경향.
+- 주의: 비사고 소형 모델 gemma는 `decide`에서 가장 단호한 "yes(지지)" 2/2를 내며, reasoning 모델들이 `qualified`로 유보하는 것과 대조적으로 단순 이항에 더 쉽게 커밋 — **reasoning 단계가 없을수록 형식의 이항 구조(red/blue)에 더 그대로 노출**되어 확정 stance를 찍는 경향. 단, 이 "단호함"은 `analyze_mvp.py`의 키워드 stance 휴리스틱에 의존하므로 정성 $J$ 재검증이 필요하다.
 
 ## 해석 — MVP 설계 베팅의 검증
 1. **선형 척춄은 성립**: 목적→바인딩→실행은 8개 모델 타입 전부에서 안정적으로 형식의 *구조*를 실현(마커 1.0에 가까움).
