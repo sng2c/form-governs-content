@@ -1,7 +1,7 @@
 # 라우팅 매트릭스 — 데이터 정합 목적별 모델 라우팅 (초안)
 
 > 영문 버전: [`ROUTING.md`](ROUTING.md) · 실험 인덱스: [`../EXPERIMENTS.md`](../EXPERIMENTS.md)
-> **v0.3.0 독해**: 이 매트릭스는 자동 척추의 구현 + `intent` 컨트롤의 구체화. $\Phi_{\text{route}}$의 *소멸된 부분*(자동 라우팅)과 *저항한 잔여*(`intent` 스위치)가 함께 살아 있음. 정합 뷰: [`CONTROL_PANEL.md`](CONTROL_PANEL.md).
+> **v0.3.0 독해**: 이 매트릭스는 자동 코어의 구현 + `intent` 컨트롤의 구체화. $\Phi_{\text{route}}$의 *소멸된 부분*(자동 라우팅)과 *저항한 잔여*(`intent` 스위치)가 함께 살아 있음. 정합 뷰: [`CONTROL_PANEL.md`](CONTROL_PANEL.md).
 
 세 실험(Exp1 120회 / Exp2 96회 / Exp3 75회)의 raw JSON에서 도출한 **목적별 모델 라우팅 제안**이다.
 이전 Pruner 1차 제안의 "하이브리드 매트릭스(synthesize→로컬, decide→클라우드 reasoning)"는

@@ -12,7 +12,7 @@ runner, analysis, data, report), reproduce command, and key result.
 | **Synthesis** | Control Panel (v0.3.0 re-alignment) | What control panel survives after deleting phantom controls? | — | `CONTROL_PANEL.md` | `CONTROL_PANEL.md`·`.en.md` |
 
 **Sequence & dependency:** Exp 1 → (Pruner MVP compromise approved) → Exp 2. Exp 2 reuses
-Exp 1's forms/items and validates the Pruner linear spine.
+Exp 1's forms/items and validates the Pruner linear core.
 
 ---
 
@@ -42,7 +42,7 @@ Exp 1's forms/items and validates the Pruner linear spine.
 ## Exp 2 — Pruner MVP multi-model (purpose→template binding × 8 model types)
 
 - **Origin:** approved Pruner (MVP) compromise. With $\Phi$ (ideal-template generation)
-  kept a black box, the linear spine (purpose→bind→run→human judge) is exercised across
+  kept a black box, the linear core (purpose→bind→run→human judge) is exercised across
   diverse model types.
 - **Question:** How does the purpose→template binding govern the form's *structure* vs
   *verdict* across model types?

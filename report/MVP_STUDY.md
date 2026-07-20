@@ -4,11 +4,11 @@
 > **v0.3.0 reading**: this experiment *mostly dissolves* $\Phi_{\text{route}}$ (model selection — synthesize/explore are model-independent) and *confirms real* the `intent` control via the model-dependence of decide-on-contested verdicts. Canonical view: [`CONTROL_PANEL.en.md`](CONTROL_PANEL.en.md).
 
 Follow-up experiment run after approving the Pruner (MVP) compromise. With **$\Phi$
-(ideal-template generation) kept a black box**, the linear spine (purpose→bind→run) was
+(ideal-template generation) kept a black box**, the linear core (purpose→bind→run) was
 exercised across **8 model types** on Ollama Cloud, and we ask how "form governs content"
 varies with model type.
 
-## Design (MVP linear spine)
+## Design (MVP linear core)
 $$P \xrightarrow{\text{bind}} T_k \xrightarrow{M} O \xrightarrow{\text{human } J}$$
 - Purposes $P \in \{$`decide`, `synthesize`, `surface_assumptions`$\}$ (a subset of the Pruner taxonomy $\Pi$).
 - Binding $\Pi\to\mathcal{T}$: `decide→red_blue_debate`, `synthesize→dialectical_triad`, `surface_assumptions→socratic_dialogue`.
@@ -28,7 +28,7 @@ Required-marker presence (`DEBATE/SYNTHESIS/DIALOGUE CONCLUSION`) — purpose-re
 | general | 1.0 | 1.0 | 1.0 |
 | small-efficient | 1.0 | 1.0 | 1.0 |
 
-→ The **linear spine is robust to model type**: nearly every model follows the structural
+→ The **linear core is robust to model type**: nearly every model follows the structural
 requirements of the dialectical form (markers/sections). Only general-moe (kimi/qwen)
 occasionally drops a marker (0.75/0.875). "Form governs structure" is largely model-independent.
 
@@ -99,7 +99,7 @@ system") instead of a bare yes/no. Hegel's H1a is robust across model types.
   `analyze_mvp.py`; a qualitative $J$ re-check is warranted.
 
 ## Interpretation — validating the MVP design bet
-1. **The linear spine holds**: purpose→bind→run realizes the form's *structure* stably
+1. **The linear core holds**: purpose→bind→run realizes the form's *structure* stably
    across all 8 model types (marker rate ~1.0).
 2. **The non-linear $\Phi$ staying a black box is justified**: even with the same form,
    the *verdict* splits by model on contested items. So the "ideal template for a purpose"

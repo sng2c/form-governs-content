@@ -5,7 +5,7 @@
 
 Pruner(MVP) 타협점 승인 후 진행한 후속 실험. **$\\Phi$(이상 템플릿 생성)는 블랙박스로 둔 채**, 선형 척춄(목적→바인딩→실행)을 Ollama Cloud의 **8개 모델 타입**에 걸쳐 시행하고, "형식이 내용을 지배한다"는 모델 의존적으로 어떻게 변하는지 분석.
 
-## 설계 (MVP 선형 척추)
+## 설계 (MVP 선형 코어)
 $$P \\xrightarrow{\\text{바인딩}} T_k \\xrightarrow{M} O \\xrightarrow{\\text{인간 } J}$$
 - 목적 $P \\in \\{$`decide`, `synthesize`, `surface_assumptions`$\\}$ (Pruner 분류체 $\\Pi$의 부분집합).
 - 바인딩 $\\Pi\\to\\mathcal{T}$: `decide→red_blue_debate`, `synthesize→dialectical_triad`, `surface_assumptions→socratic_dialogue`.

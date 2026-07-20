@@ -17,7 +17,7 @@ $I_0$ is a **regulative ideal** (do not assume it exists). Dissolution testing h
 *downward-correcting* it:
 - The "creative synthesis" part *dissolves* (form-driven, automatable).
 - "Full automation" holds *only if* $\alpha$ (authenticity) dissolves. If $\alpha$ resists,
-  $I_0$ (full automation) is a **phantom**, and the real deliverable is "automated spine +
+  $I_0$ (full automation) is a **phantom**, and the real deliverable is "automated core +
   minimal control panel".
 
 ## 2. Control-Panel (candidate controls) dissolution map
@@ -37,7 +37,7 @@ untested (frontier)**:
 ## 3. Current MVP = current control panel (frozen)
 After deleting phantom controls, the surviving panel:
 
-**Automated spine (dissolved/linear, no human control):**
+**Automated core (dissolved/linear, no human control):**
 $$P \xrightarrow{\text{fixed form}} F \xrightarrow{\text{routing matrix}} M \xrightarrow{\text{synthesis generation}} S_3$$
 Robust down to 1B non-reasoning → cost 0, model-agnostic, already automated.
 (Implementation: [`ROUTING.md`](ROUTING.md))
@@ -63,7 +63,7 @@ preservation done → unblocked).
 - **residual → 0**: $\alpha$ *dissolves* (phantom) → delete from panel → $I_0$ (full
   automation) recovers.
 - **stable residual + human agreement**: $\alpha$ is *real* → keep → $I_0$ (full
-  automation) confirmed phantom; the real deliverable = "automated spine + 2-control
+  automation) confirmed phantom; the real deliverable = "automated core + 2-control
   panel".
 
 ## 5. v0.3.0 reading of each experiment (which control it dissolved/confirmed)
@@ -79,12 +79,12 @@ preservation done → unblocked).
   (refuses_binary 1.0, novelty 0.96–0.995) → the "needs large/reasoning model" control
   *dissolves* (phantom); creativity-is-form-driven *confirmed*. The 1B novelty-cheat risk
   raises the $\alpha$ *candidate control*.
-- **ROUTING** (matrix): the implementation of the automated spine + the `intent` control.
+- **ROUTING** (matrix): the implementation of the automated core + the `intent` control.
   Both the dissolved part of $\Phi_{\text{route}}$ and its resisting residual (intent) live
   there together.
 
 ## 6. Deliverable status (per v0.3.0)
-- **Automated spine**: implemented (ROUTING matrix + 1B local verification).
+- **Automated core**: implemented (ROUTING matrix + 1B local verification).
 - **Control #1 `intent`**: confirmed real; can be formalized as a switch.
 - **Control #2 $\alpha$**: candidate; dissolution test is the next step (unblocked by raw
   preservation).
