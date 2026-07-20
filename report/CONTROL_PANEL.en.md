@@ -57,14 +57,13 @@ $\kappa_{\text{op}}$) narrow candidates; a human disposes only on the borderline
 > is kept; the candidate ($\alpha$) awaits a dissolution test. The panel shrinks by
 > deleting phantom controls on descent.
 
-## 4. Frontier — $\alpha$ dissolution test (next descent)
-Measure the residual of $\alpha \approx f(m,\rho,\nu,\kappa_{\text{op}})$ (raw 3-run
-preservation done → unblocked).
-- **residual → 0**: $\alpha$ *dissolves* (phantom) → delete from panel → $I_0$ (full
-  automation) recovers.
-- **stable residual + human agreement**: $\alpha$ is *real* → keep → $I_0$ (full
-  automation) confirmed phantom; the real deliverable = "automated core + 2-control
-  panel".
+## 4. $\alpha$ dissolution test result (Stage B, 24 human labels) — **RESISTS -> real**
+Measured the residual of $\alpha \approx f(m,\rho,\nu,\kappa_{\text{op}})$ with human labels (G=2,B=1,C=0).
+- Best single-threshold accuracy (G vs C) **0.625** (near chance); 4-observable logistic combo **0.625** — **all 6 G (1,2,14,16,19,23) misclassified**.
+- Observationally-indistinguishable G/C pairs: **18** (G#1/#2, κ_op=0 ≡ C#4/5/6/10/11, κ_op=0).
+- authenticity-vs-observable correlation: m=0.22, ν=0.12, κ_op=0.15 — all near zero.
+- **Verdict**: $\alpha$ cannot be dissolved into observables → **kept as a real control** (human-responsibility gate). $I_0$ (full automation) **confirmed phantom**.
+- What α measures (genuineness of a *new category / conceptual sublation*) is structurally beyond operational-verb density (κ_op) → irreducibly human.
 
 ## 5. v0.3.0 reading of each experiment (which control it dissolved/confirmed)
 - **Exp1** (120, single model · 8 forms): form governs content (verdict divergence 0.283)
@@ -85,8 +84,7 @@ preservation done → unblocked).
 
 ## 6. Deliverable status (per v0.3.0)
 - **Automated core**: implemented (ROUTING matrix + 1B local verification).
-- **Control #1 `intent`**: confirmed real; can be formalized as a switch.
-- **Control #2 $\alpha$**: candidate; dissolution test is the next step (unblocked by raw
-  preservation).
-- **$I_0$ (full automation)**: held as a regulative ideal; the $\alpha$ test decides real
-  vs phantom.
+- **Control #1 `intent`**: confirmed real (Exp2) — decide-on-contested bias switch.
+- **Control #2 $\alpha$**: **confirmed real** (Stage B — resisted dissolution) — synthesis authenticity gate.
+- **$I_0$ (full automation)**: **confirmed phantom** (α does not dissolve, so impossible).
+- **Control panel stable**: both controls resist dissolution → no phantom control left to delete → **the discovered practical mechanism = automated core + {intent, α} 2-control panel**. Full automation was never the goal; minimal, surgical human control is.

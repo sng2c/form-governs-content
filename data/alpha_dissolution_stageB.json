@@ -1,0 +1,158 @@
+{
+  "n_labeled": 24,
+  "label_counts": {
+    "G": 6,
+    "B": 8,
+    "C": 10
+  },
+  "per_label_means": {
+    "G": {
+      "n": 6,
+      "m": 1.0,
+      "rho": 1.0,
+      "nu": 0.9993,
+      "kop": 1.848
+    },
+    "B": {
+      "n": 8,
+      "m": 1.0,
+      "rho": 1.0,
+      "nu": 0.9992,
+      "kop": 1.515
+    },
+    "C": {
+      "n": 10,
+      "m": 0.9,
+      "rho": 1.0,
+      "nu": 0.9992,
+      "kop": 1.295
+    }
+  },
+  "authenticity_score_correlation": {
+    "m": 0.217,
+    "rho": NaN,
+    "nu": 0.12,
+    "kop": 0.147
+  },
+  "best_single_threshold_GvsC": {
+    "obs": "nu",
+    "thr": 1.0,
+    "dir": ">=",
+    "acc": 0.625,
+    "mis": [
+      14,
+      16,
+      19,
+      20,
+      22,
+      23
+    ],
+    "n": 16
+  },
+  "logistic_combo_GvsC_accuracy": 0.625,
+  "logistic_combo_GvsC_misclassified": [
+    1,
+    2,
+    14,
+    16,
+    19,
+    23
+  ],
+  "observational_indistinguishable_GC_pairs": [
+    {
+      "G": 1,
+      "C": 4,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 1,
+      "C": 5,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 1,
+      "C": 6,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 1,
+      "C": 10,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 1,
+      "C": 11,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 2,
+      "C": 4,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 2,
+      "C": 5,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 2,
+      "C": 6,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 2,
+      "C": 10,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 2,
+      "C": 11,
+      "obs": "m=1,rho=1,nu~1.0,kop~0.0"
+    },
+    {
+      "G": 16,
+      "C": 18,
+      "obs": "m=1,rho=1,nu~0.999,kop~2.56"
+    },
+    {
+      "G": 19,
+      "C": 18,
+      "obs": "m=1,rho=1,nu~0.999,kop~3.12"
+    },
+    {
+      "G": 19,
+      "C": 20,
+      "obs": "m=1,rho=1,nu~0.999,kop~3.12"
+    },
+    {
+      "G": 19,
+      "C": 21,
+      "obs": "m=1,rho=1,nu~0.999,kop~3.12"
+    },
+    {
+      "G": 19,
+      "C": 22,
+      "obs": "m=1,rho=1,nu~0.999,kop~3.12"
+    },
+    {
+      "G": 23,
+      "C": 20,
+      "obs": "m=1,rho=1,nu~0.999,kop~3.45"
+    },
+    {
+      "G": 23,
+      "C": 21,
+      "obs": "m=1,rho=1,nu~0.999,kop~3.45"
+    },
+    {
+      "G": 23,
+      "C": 22,
+      "obs": "m=1,rho=1,nu~0.999,kop~3.45"
+    }
+  ],
+  "G_misflagged_by_low_kop": [
+    1,
+    2
+  ],
+  "verdict": "RESISTS (alpha is REAL -> keep control; I_0 full-automation = phantom)"
+}
