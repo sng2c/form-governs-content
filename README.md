@@ -79,25 +79,38 @@
 form-governs-content/
 ├── README.md               이 파일 (한국어 연구 개요)
 ├── README.en.md            English overview
+├── EXPERIMENTS.md          실험 순서·결과 맵 (한) / .en.md (영)
 ├── run.sh                  .env 로드 + venv 활성화 + 파이프라인 실행
 ├── requirements.txt
 ├── .env                    OLLAMA_API_KEY + VENV_ACTIVATE (git 제외)
 ├── forms/                  8개 형식 템플릿 (철학 주석 포함)
 ├── content/dataset.json    3개 통제 콘텐츠 (중립 사실 + 쟁점 질문)
-├── runner/                 config.json / forms.py / llm.py / run_experiments.py
-├── analyze/                extract.py(결론 추출) / analyze.py(메트릭)
-├── report/
-│   ├── REPORT.md           상세 리포트 (English)
-│   ├── REPORT.ko.md        상세 리포트 (한국어)
-│   ├── ITEMS.md            항목별 상세 (English)
-│   └── ITEMS.ko.md         항목별 상세 (한국어)
-└── data/                   raw_runs.jsonl + analysis.json (git 제외)
+│   └── exp3_items.json     Exp3 개방형 설계 2개
+├── runner/                 config.json / mvp_config.json / exp3_config.json
+│   └── forms.py / llm.py / run_experiments.py / run_mvp.py / run_exp3.py
+├── analyze/                extract.py / analyze.py / analyze_mvp.py
+│   └── analyze_exp3.py / analyze_alpha.py / analyze_alpha_stageB.py
+├── report/                 REPORT·ITEMS·MVP_STUDY·EXP3_STUDY·ROUTING (한/영)
+│   └── CONTROL_PANEL(+SPEC)·PRUNER_LOG·ALPHA_LABELS_SHEET
+└── data/                   raw_runs/mvp_runs/exp3_runs.jsonl + *_analysis.json + alpha_dissolution_stageA/B.json (커밋됨; *.log만 제외)
 ```
 
 ## 재현
 ```bash
-cp .env.example .env   # OLLAMA_API_KEY 와 VENV_ACTIVATE 입력
-./run.sh experiments   # 120 호출 → data/raw_runs.jsonl
-./run.sh analyze       # → data/analysis.json
+cp .env.example .env        # OLLAMA_API_KEY 와 VENV_ACTIVATE 입력
+./run.sh experiments        # Exp1: 120 호출 → data/raw_runs.jsonl
+python -m runner.run_mvp    # Exp2: 96 호출 (8 클라우드 모델)
+python -m runner.run_exp3   # Exp3: 75 호출 (5 로컬 모델, 1–12B)
+python -m analyze.analyze        # Exp1 메트릭
+python -m analyze.analyze_mvp    # Exp2 메트릭
+python -m analyze.analyze_exp3   # Exp3 크로스-모델
+python -m analyze.analyze_alpha        # α Stage A (관측량)
+python -m analyze.analyze_alpha_stageB  # α Stage B (인간 라벨→소멸 잔여)
 ```
-설정: `runner/config.json` (모델·온도·시드·반복수·forms). 환경: `python-dotenv`, `requests`, `numpy`, `scikit-learn`.
+설정: 각 `runner/*.json`. 환경: `python-dotenv`, `requests`, `numpy`, `scikit-learn`.
+
+## 프로젝트 최종 상태 (v0.3.0) — 종료 조건 도달
+- **총 291 completions**: Exp1(120) · Exp2(96) · Exp3(75).
+- **결과 계보**: 형식이 내용을 지배(Exp1) → 창의성은 형식에서·1B 비-reasoning까지 robust(Exp3) → 모델 선택은 대부분 자동 코어로 소멸, decide 쟁점만 `intent`로 실재(Exp2) → α(진정성)는 소멸 저항으로 실재(Stage A/B) → **완전 자동 $I_0$ 는 환상 확정**.
+- **발견된 제어판**: 자동 코어 + {`intent`, α} 2-컨트롤. 두 컨트롤 모두 소멸 저항(실재) → 더 삭제할 환상 컨트롤 없음 → 제어판 안정 = 산출물. 상세: [`report/CONTROL_PANEL.md`](report/CONTROL_PANEL.md) · 설계: [`report/CONTROL_PANEL_SPEC.md`](report/CONTROL_PANEL_SPEC.md).
+- **방법론 산출물**: 본 연구를 수행한 Pruner 스킬 `pruner-arch` v0.3.0([github.com/sng2c/pruner-arch](https://github.com/sng2c/pruner-arch)) — 정합적 이상·프랙탈 분해·환상 컨트롤 삭제·제어판 발견. 스킬이 스스로를 검증한 형태.
