@@ -1,6 +1,7 @@
 # Routing Matrix — Data-Grounded Purpose-to-Model Routing (Draft)
 
 > 한국어 버전: [`ROUTING.ko.md`](ROUTING.ko.md) · Experiments index: [`../EXPERIMENTS.en.md`](../EXPERIMENTS.en.md)
+> **v0.3.0 reading**: this matrix is the implementation of the automated spine + the `intent` control. The *dissolved part* of $\Phi_{\text{route}}$ (automated routing) and its *resisting residual* (`intent` switch) live here together. Canonical view: [`CONTROL_PANEL.en.md`](CONTROL_PANEL.en.md).
 
 A **purpose-to-model routing proposal** distilled from the raw JSON of all three
 experiments (Exp1 120 / Exp2 96 / Exp3 75 runs). An earlier Pruner v1 proposal — a

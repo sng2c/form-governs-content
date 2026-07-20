@@ -1,6 +1,7 @@
 # Exp 3 — Dialectical Triad Aufhebung Verified on a Small Local Model
 
 > 한국어 버전: [`EXP3_STUDY.ko.md`](EXP3_STUDY.ko.md) · Experiments index: [`../EXPERIMENTS.en.md`](../EXPERIMENTS.en.md)
+> **v0.3.0 reading**: Aufhebung reproducing down to 1B non-reasoning *dissolves* the "needs large/reasoning model" control (phantom) and *confirms* creativity-is-form-driven. The 1B novelty-cheat risk raises the $\alpha$ candidate control. Canonical view: [`CONTROL_PANEL.en.md`](CONTROL_PANEL.en.md).
 
 ## Motivation
 Exp 2 showed cloud `gemma4:31b` producing a qualitatively equivalent synthesis to

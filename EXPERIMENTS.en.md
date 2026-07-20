@@ -8,6 +8,8 @@ runner, analysis, data, report), reproduce command, and key result.
 |---|---|---|---|---|---|
 | **Exp 1** | Does form govern content (single model, 8 forms) | Does changing only the form change the verdict? | 1 model × 8 forms × 3 items × 5 repeats = **120** | `raw_runs.jsonl`·`analysis.json` | `REPORT.*`, `ITEMS.*` |
 | **Exp 2** | Pruner MVP multi-model | How does the purpose→template binding vary across model types? | 8 models × 3 purposes × 2 items × 2 repeats = **96** | `mvp_runs.jsonl`·`mvp_analysis.json` | `MVP_STUDY.*` |
+| **Exp 3** | Dialectical Triad Aufhebung on local small models | Does creative synthesis reproduce on small local models (1–12B, reasoning & non-reasoning)? | 5 local models × triad × 5 items × 3 repeats = **75** | `exp3_runs.jsonl`·`exp3_analysis.json` | `EXP3_STUDY.*` |
+| **Synthesis** | Control Panel (v0.3.0 re-alignment) | What control panel survives after deleting phantom controls? | — | `CONTROL_PANEL.md` | `CONTROL_PANEL.md`·`.en.md` |
 
 **Sequence & dependency:** Exp 1 → (Pruner MVP compromise approved) → Exp 2. Exp 2 reuses
 Exp 1's forms/items and validates the Pruner linear spine.

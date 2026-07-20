@@ -1,6 +1,7 @@
 # Exp 3 — 로컬 소형 모델에서 변증법 triad의 창의적 종합(Aufhebung) 검증
 
 > 영문 버전: [`EXP3_STUDY.md`](EXP3_STUDY.md) · 실험 인덱스: [`../EXPERIMENTS.md`](../EXPERIMENTS.md)
+> **v0.3.0 독해**: 1B 비-reasoning까지 Aufhebung 재현으로 "대형/reasoning 필요" 컨트롤을 *소멸*(환상), 창의성=형식 주도 *확정*. 단 1B novelty-cheat 위험이 $\alpha$ 후보 컨트롤을 부상. 정합 뷰: [`CONTROL_PANEL.md`](CONTROL_PANEL.md).
 
 ## 동기
 Exp 2에서 cloud `gemma4:31b`이 triad 하에서 gpt-oss:120b와 질적으로 동등한 종합을 산출(novelty 0.764)하는 것을 관측. **"창의적 형식(triad)의 종합력이 모델 스케일/타입에 robust하면, 비싼 클라우드 reasoning 모델 없이도 로컬 소형 LLM으로 창의적 문제해결이 가능하지 않은가?"** 라는 가설(H_local)을 로컬에서 직접 검증.

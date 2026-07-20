@@ -1,6 +1,7 @@
 # MVP 연구 — 다양한 모델 타입에 걸친 목적→템플릿 바인딩 시행
 
 > 영문 버전: [`MVP_STUDY.md`](MVP_STUDY.md) · 주 리포트: [`REPORT.ko.md`](REPORT.ko.md)
+> **v0.3.0 독해**: 이 실험이 $\Phi_{\text{route}}$(모델 선택)를 *대부분 소멸*시키고(정합·탐색은 모델 무관), 잔여인 decide 쟁점 판정의 모델 의존성으로 `intent` 컨트롤을 *실재 확정*. 정합 뷰: [`CONTROL_PANEL.md`](CONTROL_PANEL.md).
 
 Pruner(MVP) 타협점 승인 후 진행한 후속 실험. **$\\Phi$(이상 템플릿 생성)는 블랙박스로 둔 채**, 선형 척춄(목적→바인딩→실행)을 Ollama Cloud의 **8개 모델 타입**에 걸쳐 시행하고, "형식이 내용을 지배한다"는 모델 의존적으로 어떻게 변하는지 분석.
 

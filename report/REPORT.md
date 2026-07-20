@@ -1,6 +1,7 @@
 # Hegel's "Form Governs Content" — Empirical Test in LLMs
 
 > 한국어 버전: [`REPORT.ko.md`](REPORT.ko.md) · Per-item notes: [`ITEMS.md`](ITEMS.md)
+> **v0.3.0 reading**: this experiment corrects the hidden assumption of candidate control $\Phi_0$ (ideal-template generation) — that "template is content-irrelevant" — and gives the first evidence that creativity is form-driven. Canonical view: [`CONTROL_PANEL.en.md`](CONTROL_PANEL.en.md).
 
 ## The thesis (Hegel)
 In Hegel's *Science of Logic*, form is not an indifferent vessel into which content

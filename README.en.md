@@ -12,6 +12,7 @@ in *substantive content* — its verdicts and conclusions?
 🌐 **한국어 README**: [`README.md`](README.md)
 🧪 **MVP multi-model study**: [`report/MVP_STUDY.md`](report/MVP_STUDY.md) (English) · [`report/MVP_STUDY.ko.md`](report/MVP_STUDY.ko.md) (한국어)
 🔍 **Exp 3 local triad verification**: [`report/EXP3_STUDY.md`](report/EXP3_STUDY.md) (English) · [`report/EXP3_STUDY.ko.md`](report/EXP3_STUDY.ko.md) (한국어)
+🎛️ **Canonical view (v0.3.0 control panel)**: [`report/CONTROL_PANEL.en.md`](report/CONTROL_PANEL.en.md) (English) · [`report/CONTROL_PANEL.md`](report/CONTROL_PANEL.md) (한국어)
 
 ---
 

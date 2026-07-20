@@ -1,6 +1,6 @@
 # Pruner 세션 로그 — form-governs-content 가지치기 기록
 
-> 본 파일은 `pruner-arch` pi skill으로 수행한 **top-down 백캐스팅 가지치기 세션**의 기록이다.
+> **v0.3.0 정합 뷰는 [`CONTROL_PANEL.md`](CONTROL_PANEL.md) / [`CONTROL_PANEL.en.md`](CONTROL_PANEL.en.md) 로 이전**. 본 파일은 *과거 세션 기록(역사적)*로 보존. 용어(Φ·블랙박스·하강)는 v0.2 시점것이며, v0.3.0(정합적 이상·제어판·환상 컨트롤 삭제)로 재정렬한 결과는 CONTROL_PANEL에 있음.
 > 라우팅 산출물은 [`ROUTING.ko.md`](ROUTING.ko.md) · [`ROUTING.md`](ROUTING.md) 참고.
 > **PC 재개 시 이 파일을 먼저 읽으면 세션 맥락이 복원된다.**
 

@@ -2,6 +2,7 @@
 
 > 영문 버전: [`ITEMS.md`](ITEMS.md)
 > 주 리포트: [`REPORT.ko.md`](REPORT.ko.md)
+> **v0.3.0 독해**: 항목별 verdict 분산(battery 0.20·minimum_wage 0.425·pluto 0.225)이 $\Phi_0$ 정정의 증거이자, 쟁점 수위가 `intent` 컨트롤의 발현 조건임을 보임. 정합 뷰: [`CONTROL_PANEL.md`](CONTROL_PANEL.md).
 
 이 연구는 3개의 "콘텐츠 항목"을 사용한다. 각 항목은 (1) 양쪽 모두를 지지하는 **중립
 사실**들과 (2) 진짜로 쟁점적인 **하나의 질문**으로 구성된다. 항목을 고른 기준은

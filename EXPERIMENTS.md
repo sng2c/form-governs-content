@@ -7,6 +7,7 @@
 | **Exp 1** | 형식이 내용을 지배하는가 (단일 모델·8형식) | 같은 내용, 형식만 바꾸면 결론이 달라지는가? | 1모델 × 8형식 × 3항목 × 5반복 = **120** | `raw_runs.jsonl`·`analysis.json` | `REPORT.*`, `ITEMS.*` |
 | **Exp 2** | Pruner MVP 다중 모델 | 목적→템플릿 바인딩이 모델 타입에 걸쳐 어떻게 달라지는가? | 8모델 × 3목적 × 2항목 × 2반복 = **96** | `mvp_runs.jsonl`·`mvp_analysis.json` | `MVP_STUDY.*` |
 | **Exp 3** | 로컬 소형 모델에서 triad Aufhebung | 창의적 종합이 소형 로컬 모델(1–12B, reasoning·비-reasoning)에서도 재현되는가? | 5 로컬 모델 × triad × 5항목 × 3반복 = **75** | `exp3_runs.jsonl`·`exp3_analysis.json` | `EXP3_STUDY.*` |
+| **통합** | 제어판(v0.3.0 재정렬) | 환상 컨트롤 삭제 후 살아남은 제어판은? | — | `CONTROL_PANEL.md` | `CONTROL_PANEL.md`·`.en.md` |
 
 **순서·의존성**: Exp 1 → (Pruner MVP 타협점 승인) → Exp 2 → (triad-on-small-model 역발상) → Exp 3. Exp 3는 Exp 2의 'triad는 소형 모델에서도 종합력 robust' 관측을 로컬 12B에서 직접 검증.
 

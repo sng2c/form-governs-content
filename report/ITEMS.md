@@ -2,6 +2,7 @@
 
 > 한국어 버전: [`ITEMS.ko.md`](ITEMS.ko.md)
 > Main report: [`REPORT.md`](REPORT.md)
+> **v0.3.0 reading**: per-item verdict divergence (battery 0.20 · minimum_wage 0.425 · pluto 0.225) is the evidence that corrects $\Phi_0$, and shows that "contestedness" is the trigger condition for the `intent` control. Canonical view: [`CONTROL_PANEL.en.md`](CONTROL_PANEL.en.md).
 
 This study uses three "content items." Each consists of (1) **neutral facts** that
 support *both* sides and (2) one **genuinely contested question**. The selection

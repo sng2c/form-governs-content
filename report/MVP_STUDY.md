@@ -1,6 +1,7 @@
 # MVP Study — Running the Purpose→Template Binding Across Model Types
 
 > 한국어 버전: [`MVP_STUDY.ko.md`](MVP_STUDY.ko.md) · Main report: [`REPORT.md`](REPORT.md)
+> **v0.3.0 reading**: this experiment *mostly dissolves* $\Phi_{\text{route}}$ (model selection — synthesize/explore are model-independent) and *confirms real* the `intent` control via the model-dependence of decide-on-contested verdicts. Canonical view: [`CONTROL_PANEL.en.md`](CONTROL_PANEL.en.md).
 
 Follow-up experiment run after approving the Pruner (MVP) compromise. With **$\Phi$
 (ideal-template generation) kept a black box**, the linear spine (purpose→bind→run) was
