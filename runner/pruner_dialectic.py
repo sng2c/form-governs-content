@@ -43,6 +43,8 @@ PURPOSE_TO_FORM = {
     "surface_assumptions": "socratic_dialogue",
 }
 PURPOSE_LABELS = {"1": "decide", "2": "synthesize", "3": "surface_assumptions"}
+KOREAN_PURPOSE = {"decide": "결정", "synthesize": "종합", "surface_assumptions": "전제 드러내기"}
+KOREAN_FORM = {"red_blue_debate": "찬반토론", "dialectical_triad": "변증법 삼단", "socratic_dialogue": "소크라테스 대화"}
 
 
 # ---------- config / content ----------
@@ -93,29 +95,31 @@ def nu_against_pool(synthesis, content_id):
 
 def gate_intent(cfg, content_id, r, auto):
     print("\n" + "=" * 64)
-    print(f"[CONTROL #1 — intent]  contested decision '{content_id}' (r={r:.3f} >= theta_r={cfg['theta_r']})")
-    print("이 결정은 모델 의존적(정답이 열려있음). 어느 쪽으로 당기시겠습니까?")
-    print("  1) scrutinize   (보수 검증, lean 'no')")
-    print("  2) include      (점진 포용, lean 'yes')")
-    print("  3) neutral      (중립)")
+    print(f"[사람 개입 1 — 결정 방향]  쟁점 결정 '{content_id}' (쟁점 수위 r={r:.3f} ≥ 기준 {cfg['theta_r']})")
+    print("이 결정은 정답이 열려 있어 모델이 어느 쪽으로든 갈 수 있습니다. 어느 쪽으로 당기시겠습니까?")
+    print("  1) 보수 검증  (아니오 쪽으로 신중하게 따짐)")
+    print("  2) 점진 포용  (예 쪽으로 조심스럽게 받아들임)")
+    print("  3) 중립      (모델이 스스로 판단)")
     if auto:
-        c = "neutral"; print(f"[auto] -> {c}"); return c
-    c = input("choice [1/2/3, default 3]: ").strip() or "3"
+        c = "neutral"; print(f"[자동] -> 3) 중립"); return c
+    c = input("선택 [1/2/3, 기본 3]: ").strip() or "3"
     return {"1": "scrutinize", "2": "include", "3": "neutral"}.get(c, "neutral")
 
 
 def gate_alpha(cfg, synthesis, nu, kop, auto):
     print("\n" + "=" * 64)
-    print(f"[CONTROL #2 — alpha]  저-작동구조 종합 (kop={kop} <= {cfg['alpha_kop_threshold']})")
-    print("자동 프록시는 진정성을 판정 못 함(Stage B: nu는 노이즈, kop는 약한 프록시). 사람이 판정.")
-    print("\n종합:")
+    print(f"[사람 개입 2 — 진정성 판정]  작동 구조가 부실한 종합 (kop={kop} ≤ 기준 {cfg['alpha_kop_threshold']})")
+    print("자동 지표로는 진짜/가짜를 가릴 수 없습니다(Stage B 검증). 사람이 판정해 주세요.")
+    print("\n종합 내용:")
     print("  " + synthesis.replace("\n", "\n  "))
-    print(f"\n관측량: nu={nu}  kop={kop}  (kop 낮을수록 값싼 재구성 의심)")
-    print("  G=진짜 제3 지양  C=novelty-cheat(수사, 메커니즘 없음)  B=경계")
+    print(f"\n지표: nu(새로움)={nu}  kop(작동구조 밀도)={kop}  — kop가 낮을수록 겉치레 수사 의심)")
+    print("  1) 진짜   (양극을 넘어선 제3의 종합/지양)")
+    print("  2) 겉치레 (수사적 재구성, 작동 메커니즘 없음)")
+    print("  3) 애매함")
     if auto:
-        v = "G"; print(f"[auto] -> {v}"); return v
-    v = (input("label [G/C/B, default G]: ").strip().upper() or "G")
-    return v if v in ("G", "C", "B") else "G"
+        v = "G"; print(f"[자동] -> 1) 진짜"); return v
+    c = input("판정 [1/2/3, 기본 1]: ").strip() or "1"
+    return {"1": "G", "2": "C", "3": "B"}.get(c, "G")
 
 
 def ask(prompt, default=None):
@@ -151,36 +155,36 @@ def run_one(cfg, purpose, content, r_override, auto, no_run):
              "alpha_fires": None, "alpha_label": None, "rerouted": False}
 
     print("\n=== pruner-dialectic ===")
-    print(f"purpose={purpose}  content={cid}  form={form_name}")
-    print(f"contestedness r={r:.3f}  theta_r={cfg['theta_r']}  -> intent fires: {intent_fires}")
-    print(f"routing: {route_key} -> {route['model']} ({route['endpoint']})")
+    print(f"목적={KOREAN_PURPOSE[purpose]}({purpose})  문제={cid}  형식={KOREAN_FORM[form_name]}")
+    print(f"쟁점 수위 r={r:.3f}  기준={cfg['theta_r']}  -> 방향 게이트 발동: {intent_fires}")
+    print(f"라우팅: {route_key} -> {route['model']} ({'로컬' if route['endpoint']=='local' else '클라우드'})")
 
     if no_run:
-        print("\n[dry run] 모델 호출 생략.")
+        print("\n[미리보기] 모델 호출 생략.")
         print(json.dumps(trace, indent=2, ensure_ascii=False))
         return
 
-    print(f"\n[automated core] running {route['model']} ...")
+    print(f"\n[자동 코어] {route['model']} 실행 중 ...")
     full = run_model(cfg, route["model"], route["endpoint"], prompt, cfg["seed"])
     synthesis = extract_synthesis(full) or full[:300]
     m = int(has_marker(full)); rho = int(refuses_binary(synthesis))
     kop = round(k_op(synthesis), 2); nu = nu_against_pool(synthesis, cid)
     alpha_fires = (purpose == "synthesize" and kop <= cfg["alpha_kop_threshold"])
     trace.update({"m": m, "rho": rho, "nu": nu, "kop": kop, "alpha_fires": alpha_fires})
-    print(f"proxies: m={m} rho={rho} nu={nu} kop={kop}  -> alpha fires: {alpha_fires}")
+    print(f"지표: 마커={m} 이항거부={rho} 새로움(ν)={nu} 작동구조(κ)={kop}  -> 진정성 게이트 발동: {alpha_fires}")
 
     if alpha_fires:
         label = gate_alpha(cfg, synthesis, nu, kop, auto)
         trace["alpha_label"] = label
         if label == "C":
             rr = cfg["routing"]["alpha_cheat_reroute"]
-            print(f"\n[alpha=C] 강한 모델로 재라우팅: {rr['model']} ({rr['endpoint']})")
+            print(f"\n[판정=겉치레] 더 강한 모델로 재실행: {rr['model']} ({rr['endpoint']})")
             full = run_model(cfg, rr["model"], rr["endpoint"], prompt, cfg["seed"])
             synthesis = extract_synthesis(full) or full[:300]
             trace["rerouted"] = True; trace["reroute_model"] = rr["model"]
         elif label == "B":
-            print("\n[alpha=B] 결정: a=수용, r=강한 모델로 재실행")
-            if (ask("choice [a/r, default a]: ", "a") if not auto else "a") == "r":
+            print("\n[판정=애매] 결정: a=이대로 수용, r=강한 모델로 재실행")
+            if (ask("선택 [a/r, 기본 a]: ", "a") if not auto else "a") == "r":
                 rr = cfg["routing"]["alpha_cheat_reroute"]
                 full = run_model(cfg, rr["model"], rr["endpoint"], prompt, cfg["seed"])
                 synthesis = extract_synthesis(full) or full[:300]
@@ -188,12 +192,12 @@ def run_one(cfg, purpose, content, r_override, auto, no_run):
             else:
                 print("[수용]")
         else:
-            print("[alpha=G] 수용.")
+            print("[판정=진짜] 수용.")
 
     print("\n" + "=" * 64)
-    print("최종 종합/결과:")
+    print("최종 결과:")
     print("  " + synthesis.replace("\n", "\n  "))
-    print("\nTRACE:")
+    print("\n기록(TRACE):")
     print(json.dumps(trace, indent=2, ensure_ascii=False))
 
 
@@ -207,7 +211,11 @@ def interactive(cfg, auto, no_run):
     while True:
         try:
             print("\n--- 새 문제 ---")
-            pc = ask("목적? 1) decide  2) synthesize  3) surface_assumptions  [1/2/3]: ", "2")
+            print("목적을 고르세요:")
+            print("  1) 결정            - 둘 중 하나를 골라야 할 때")
+            print("  2) 종합            - 양쪽을 넘어선 제3의 안을 만들 때")
+            print("  3) 전제 드러내기   - 숨은 가정을 찾아낼 때")
+            pc = ask("선택 [1/2/3, 기본 2]: ", "2")
             purpose = PURPOSE_LABELS.get(pc, "synthesize")
             question = ask("질문(한 줄): ")
             if not question:
@@ -223,7 +231,7 @@ def interactive(cfg, auto, no_run):
                 print("사실이 최소 1개 필요합니다."); continue
             r_override = None
             if purpose == "decide":
-                contested = ask("이 결정은 쟁점인가요(어느 쪽이 정답인지 열려있는)? [y/n, default y]: ", "y")
+                contested = ask("이 결정은 쟁점인가요(어느 쪽이 정답인지 열려있는)? [y/n, 기본 y]: ", "y")
                 r_override = 0.5 if contested.lower().startswith("y") else 0.0
             content = {"id": "adhoc", "domain": "user", "neutral_facts": facts,
                        "contested_question": question}
