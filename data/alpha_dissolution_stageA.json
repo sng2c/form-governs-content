@@ -1,0 +1,300 @@
+{
+  "n_syntheses": 122,
+  "size_class_aggregates": {
+    "20B": {
+      "n": 19,
+      "m": 1.0,
+      "rho": 1.0,
+      "nu": 0.997,
+      "kop": 13.164
+    },
+    "?": {
+      "n": 16,
+      "m": 0.938,
+      "rho": 0.938,
+      "nu": 0.991,
+      "kop": 7.798
+    },
+    "400B+": {
+      "n": 8,
+      "m": 1.0,
+      "rho": 1.0,
+      "nu": 0.993,
+      "kop": 11.895
+    },
+    "1B": {
+      "n": 34,
+      "m": 0.971,
+      "rho": 1.0,
+      "nu": 0.996,
+      "kop": 5.418
+    },
+    "12B": {
+      "n": 15,
+      "m": 1.0,
+      "rho": 1.0,
+      "nu": 0.997,
+      "kop": 11.458
+    },
+    "3B": {
+      "n": 15,
+      "m": 0.8,
+      "rho": 1.0,
+      "nu": 0.996,
+      "kop": 4.809
+    },
+    "4B": {
+      "n": 15,
+      "m": 1.0,
+      "rho": 1.0,
+      "nu": 0.996,
+      "kop": 12.181
+    }
+  },
+  "nu_kop_correlation": 0.084,
+  "nu_hi_threshold": 0.999,
+  "kop_lo_threshold": 3.7,
+  "candidate_cheats_n": 24,
+  "candidate_cheats": [
+    {
+      "model": "gemma4:12b-mlx",
+      "size": "12B",
+      "content_id": "density_greenspace",
+      "m": 1,
+      "rho": 1,
+      "nu": 1.0,
+      "kop": 0.0,
+      "synthesis": "Urban growth must be realized through \"Ecological Density,\" wherein green space is codified as mandatory public infrastructure rather than an optional amenity competing with residential development."
+    },
+    {
+      "model": "gemma4:12b-mlx",
+      "size": "12B",
+      "content_id": "density_greenspace",
+      "m": 1,
+      "rho": 1,
+      "nu": 1.0,
+      "kop": 0.0,
+      "synthesis": "The city must treat green space as a non-negotiable public utility that serves as the biological prerequisite for high-density habitation."
+    },
+    {
+      "model": "minimax-m3",
+      "size": "?",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "** Pluto should not be \"reclassified as a full planet,\" because the reclassification the question demands has already occurred in the very concept of \"dwarf planet\" — a category that correctly affirms Pluto's intrinsic p"
+    },
+    {
+      "model": "gemma4:12b-mlx",
+      "size": "12B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "Pluto should be reclassified as a planet under a revised definition that defines planethood by geophysical complexity rather than orbital clearance."
+    },
+    {
+      "model": "gemma4:12b-mlx",
+      "size": "12B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "A planet should be defined by its internal geological and gravitational autonomy rather than its external orbital dominance."
+    },
+    {
+      "model": "llama3.2:3b",
+      "size": "3B",
+      "content_id": "minimum_wage",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "** Raising the national minimum wage substantially should be approached with caution, taking into account the complex interplay between poverty reduction and employment impacts, and prioritizing a more comprehensive appr"
+    },
+    {
+      "model": "llama3.2:3b",
+      "size": "3B",
+      "content_id": "minimum_wage",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "** Raising the national minimum wage substantially can be an effective strategy for reducing poverty and increasing wages, but its impact on employment requires a more nuanced and sector-specific analysis that considers "
+    },
+    {
+      "model": "llama3.2:3b",
+      "size": "3B",
+      "content_id": "freshwater_alloc",
+      "m": 0,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "**THESIS**\n\nThe strongest position the facts most directly support is that industry should have priority access to freshwater due to its significant contribution to export revenue and job generation, which are crucial fo"
+    },
+    {
+      "model": "llama3.2:1b",
+      "size": "1B",
+      "content_id": "minimum_wage",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "A moderate increase in the national minimum wage would have a marginal effect on both poverty reduction and employment, but only because it would create a temporary surplus of low-wage labor that could be absorbed by emp"
+    },
+    {
+      "model": "llama3.2:1b",
+      "size": "1B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "A revised definition that balances the need for clear orbital paths with the possibility of gravitational interactions, while maintaining the criteria for planetary status, is necessary to reconcile the contradictions in"
+    },
+    {
+      "model": "llama3.2:1b",
+      "size": "1B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 0.0,
+      "synthesis": "A revised definition of a planet must balance the need for robust criteria with the complexity of celestial bodies. By incorporating nuanced understanding and considering multiple factors, we can create a new position th"
+    },
+    {
+      "model": "gemma3:1b",
+      "size": "1B",
+      "content_id": "minimum_wage",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 1.49,
+      "synthesis": "The optimal approach towards minimum wage policy necessitates a nuanced understanding of labor market dynamics, prioritizing adaptability and resilience over rigid, universally applied regulations.\n\nSYNTHESIS CONCLUSION:"
+    },
+    {
+      "model": "gemma3:1b",
+      "size": "1B",
+      "content_id": "density_greenspace",
+      "m": 1,
+      "rho": 1,
+      "nu": 1.0,
+      "kop": 1.69,
+      "synthesis": "A truly equitable urban future requires a paradigm shift from simply maximizing density to fostering an integrated land use strategy that prioritizes equitable distribution of green space, recognizing its vital role in m"
+    },
+    {
+      "model": "minimax-m3",
+      "size": "?",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 1.96,
+      "synthesis": "** Pluto should be reclassified as a full *planetary body* — neither restored to the eight classical planets nor left as a mere \"dwarf,\" but recognized as a planet in intrinsic character whose dynamical context warrants "
+    },
+    {
+      "model": "llama3.2:3b",
+      "size": "3B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 2.38,
+      "synthesis": "** A revised definition of a planet should prioritize celestial bodies that exhibit complex geological activity, have cleared their orbital neighborhoods through gravitational dominance, and are capable of supporting lif"
+    },
+    {
+      "model": "gemma3:4b",
+      "size": "4B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 2.56,
+      "synthesis": "Pluto should be reclassified as a \"major dwarf planet,\" acknowledging its unique geological complexity and orbital position within the Kuiper Belt while recognizing that the concept of a definitively \"cleared\" orbit is a"
+    },
+    {
+      "model": "gemma3:4b",
+      "size": "4B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 2.86,
+      "synthesis": "Pluto should be recognized as a significant planetary body within the outer solar system, defined by its size, geological complexity, and orbital characteristics, regardless of whether it perfectly satisfies the outdated"
+    },
+    {
+      "model": "llama3.2:1b",
+      "size": "1B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 2.94,
+      "synthesis": "A revised definition of a planet should consider the complex interplay between celestial mechanics, planetary formation, and the hierarchical structure of our solar system, ultimately elevating Pluto's status to that of "
+    },
+    {
+      "model": "mistral-large-3:675b",
+      "size": "400B+",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 3.12,
+      "synthesis": "** Pluto should be reclassified as a full planet under a revised, geophysically primary definition, but with a new subcategory (\"Dynamical Planets\") that preserves the empirical distinctions of the IAU’s original criteri"
+    },
+    {
+      "model": "gemma3:1b",
+      "size": "1B",
+      "content_id": "minimum_wage",
+      "m": 1,
+      "rho": 1,
+      "nu": 1.0,
+      "kop": 3.23,
+      "synthesis": "The pursuit of absolute minimum wage increases must be tempered by an acknowledgement of the complex, multifaceted nature of labor markets, acknowledging that simply raising a floor does not guarantee prosperity or equit"
+    },
+    {
+      "model": "llama3.2:3b",
+      "size": "3B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 3.33,
+      "synthesis": "** Pluto's status as a full planet should be reevaluated based on its unique characteristics and geological activity, rather than solely relying on an arbitrary criterion like clearing its neighborhood."
+    },
+    {
+      "model": "llama3.2:3b",
+      "size": "3B",
+      "content_id": "freshwater_alloc",
+      "m": 1,
+      "rho": 1,
+      "nu": 1.0,
+      "kop": 3.45,
+      "synthesis": "** The fair mechanism proposed by this synthesis balances economic importance with social impact, ensuring that agriculture's contribution to food security is recognized while industry's economic benefits are acknowledge"
+    },
+    {
+      "model": "gemma4:31b",
+      "size": "1B",
+      "content_id": "pluto_planet",
+      "m": 1,
+      "rho": 1,
+      "nu": 0.999,
+      "kop": 3.45,
+      "synthesis": "Pluto should be reclassified as a \"Geophysical Planet,\" a new category that acknowledges its complex physical nature while maintaining a distinct taxonomic separation from the orbitally dominant Major Planets."
+    },
+    {
+      "model": "gemma3:4b",
+      "size": "4B",
+      "content_id": "density_greenspace",
+      "m": 1,
+      "rho": 1,
+      "nu": 1.0,
+      "kop": 3.7,
+      "synthesis": "Cities must pursue a layered approach to growth that integrates strategically planned density with accessible, ecologically-rich public spaces as foundational elements for equitable and sustainable human flourishing."
+    }
+  ]
+}
