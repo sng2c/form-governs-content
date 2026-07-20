@@ -95,7 +95,7 @@ def nu_against_pool(synthesis, content_id):
 
 def gate_intent(cfg, content_id, r, auto):
     print("\n" + "=" * 64)
-    print(f"[사람 개입 1 — 결정 방향]  쟁점 결정 '{content_id}' (쟁점 수위 r={r:.3f} ≥ 기준 {cfg['theta_r']})")
+    print(f"[사람 개입 1 — 결정 방향]  의견이 갈리는 결정 '{content_id}' (의견 갈림 정도 r={r:.3f} ≥ 기준 {cfg['theta_r']})")
     print("이 결정은 정답이 열려 있어 모델이 어느 쪽으로든 갈 수 있습니다. 어느 쪽으로 당기시겠습니까?")
     print("  1) 보수 검증  (아니오 쪽으로 신중하게 따짐)")
     print("  2) 점진 포용  (예 쪽으로 조심스럽게 받아들임)")
@@ -156,7 +156,7 @@ def run_one(cfg, purpose, content, r_override, auto, no_run):
 
     print("\n=== pruner-dialectic ===")
     print(f"목적={KOREAN_PURPOSE[purpose]}({purpose})  문제={cid}  형식={KOREAN_FORM[form_name]}")
-    print(f"쟁점 수위 r={r:.3f}  기준={cfg['theta_r']}  -> 방향 게이트 발동: {intent_fires}")
+    print(f"의견 갈림 정도 r={r:.3f}  기준={cfg['theta_r']}  -> 방향 게이트 발동: {intent_fires}")
     print(f"라우팅: {route_key} -> {route['model']} ({'로컬' if route['endpoint']=='local' else '클라우드'})")
 
     if no_run:
@@ -231,7 +231,7 @@ def interactive(cfg, auto, no_run):
                 print("사실이 최소 1개 필요합니다."); continue
             r_override = None
             if purpose == "decide":
-                contested = ask("이 결정은 쟁점인가요(어느 쪽이 정답인지 열려있는)? [y/n, 기본 y]: ", "y")
+                contested = ask("이 결정은 의견이 갈리는(어느 쪽이 맞는지 열린) 결정인가요? [y/n, 기본 y]: ", "y")
                 r_override = 0.5 if contested.lower().startswith("y") else 0.0
             content = {"id": "adhoc", "domain": "user", "neutral_facts": facts,
                        "contested_question": question}

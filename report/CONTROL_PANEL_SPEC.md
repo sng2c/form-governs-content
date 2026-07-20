@@ -11,13 +11,13 @@
 (P, C) → [형식 바인딩] → [모델 라우팅] → [실행 M(F,C)] → S3 → [프록시 산출 m,ρ,ν,κ_op]
 ```
 - **형식 바인딩**(고정, Exp1/2): `decide→red_blue_debate` · `synthesize→dialectical_triad` · `surface_assumptions→socratic_dialogue`
-- **모델 라우팅**(매트릭스, Exp2/3): `synthesize/surface→최저 로컬(gemma3:1b/4b)` · `decide-명확→저가` · `decide-쟁점→reasoning(gpt-oss)`(단 `intent` 아래 변동)
+- **모델 라우팅**(매트릭스, Exp2/3): `synthesize/surface→최저 로컬(gemma3:1b/4b)` · `decide-명확→저가` · `decide-갈림→reasoning(gpt-oss)`(단 `intent` 아래 변동)
 - **프록시**: $m, \rho, \nu, \kappa_{\text{op}}$ 자동 산출. *좁히기 전용* — Stage B가 G/C 분리 불가를 보였으므로 프록시는 판정하지 않는다.
 
 ## 2. 컨트롤 #1 — `intent` (편향 방향 스위치)
 | 항목 | 값 |
 |---|---|
-| 트리거 | $P=\text{decide}$ AND 쟁점 수위 $r(C)\ge\theta_r$ |
+| 트리거 | $P=\text{decide}$ AND 의견 갈림 정도 $r(C)\ge\theta_r$ |
 | 인간 입력 | `{scrutinize(보수 검증·lean no) \| include(점진 포용·lean yes) \| neutral}` |
 | 효과 | 선택 편향에 맞는 모델/스탠스로 라우팅 |
 | 비노출 | decide가 아니거나 $r<\theta_r$ → 자동 `neutral` |
@@ -42,14 +42,14 @@
 |---|---|
 | synthesize / surface (대다수) | **0** |
 | decide-명확 | 0 |
-| decide-쟁점 (예: min_wage) | **intent** |
+| decide-갈림 (예: min_wage) | **intent** |
 | 임의 P, $S_3$ 경계 flag | **$\alpha$** |
-| decide-쟁점 + $S_3$ 경계 (드묾) | **intent + $\alpha$** |
+| decide-갈림 + $S_3$ 경계 (드묾) | **intent + $\alpha$** |
 
 ## 6. 증거 기반 (각 요소를 확정한 실험)
 - 형식=내용 지배 → **Exp1**(verdict 분산 0.283).
 - 모델 라우팅 대부분 소멸(synthesize/surface 모델 무관) → **Exp2/3**(1B robust).
-- `intent` 실재(decide-쟁점 판정 모델 의존) → **Exp2**(min_wage support/oppose 분기).
+- `intent` 실재(decide-의견이 갈리는 판정 모델 의존) → **Exp2**(min_wage support/oppose 분기).
 - $\alpha$ 후보 부상(1B novelty-cheat 위험) → **Exp3**.
 - $\alpha$ 실재(관측량으로 소멸 불가) → **Stage B**(본 라벨링).
 - $I_0$(완전 자동) 환상 확정 → **Stage B**($\alpha$ 소멸 불가 $\Rightarrow$ 완전 자동 불가).
