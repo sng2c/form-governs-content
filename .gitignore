@@ -1,4 +1,11 @@
-data/
+# keep raw run JSONL + analysis JSON in git; exclude logs only
+data/*.log
+data/experiment.log
+data/mvp_run.log
+data/exp3_run.log
+data/exp3b_run.log
+data/exp3c_run.log
+data/exp1_rerun.log
 __pycache__/
 *.pyc
 .venv/
