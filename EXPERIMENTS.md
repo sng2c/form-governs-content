@@ -65,6 +65,9 @@
   ```
 - **핵심 결과:** 로컬 12B에서 **마커 1.0·이항거부 1.0·novelty 0.94–1.0** — Aufhebung 100% 재현, 매번 *다른* 제3의 종합 산출. 개방형 설계(단일 정답 없음)에서도 3개의 서로 다른 제3의 설계 생산 → **H_local 지지: 창의성의 원천은 형식이지 모델이 아니다; 로컬 소형 LLM으로 창의적 문제해결 가능**.
 
+## 파생 산출물 — 라우팅 매트릭스 (세 실험 통합)
+- [`report/ROUTING.ko.md`](report/ROUTING.ko.md) · [`report/ROUTING.md`](report/ROUTING.md) — Exp1/2/3 데이터에서 도출한 **목적별 모델 라우팅 매트릭스**. decide·synthesize를 하위 목적으로 이항 분해한 데이터 정합 정본(Pruner 1차 매트릭스 자기모순 정정).
+
 ## 공유 인프라 (두 실험 공통)
 - `runner/forms.py` — 8개 형식 템플릿 라이브러리 + family 분류
 - `runner/llm.py` — Ollama Cloud(OpenAI 호환) 클라이언트 (`chat` + 메타 반환 `chat_meta`)
