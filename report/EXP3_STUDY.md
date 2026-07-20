@@ -23,8 +23,17 @@ models.** This experiment verifies H_local directly on a local model.
   third design rather than picking a side).
 - **3 repeats**, same seed/temperature/max_tokens. **15 local calls** (free, ~6 min/item).
 - **Measures**: `SYNTHESIS CONCLUSION` marker, refuses-binary, third-proposition keywords,
-  within-item novelty (creative variance). **Key = human $J$**: qualitative judgment that
-  each synthesis is a genuine third proposition, not a simple sum of the poles.
+  **within-item novelty (`within_item_novelty`: mean shingle distance across 3 repeats of the
+  same model on the same item = repetition dispersion)**. **Key = human $J$**: qualitative
+  judgment that each synthesis is a genuine third proposition, not a simple sum of the poles.
+
+> ⚠️ **Novelty-definition caveat**: Exp3's novelty is **within-item (repetition dispersion)**.
+> Exp2's `synth_novelty` in `mvp_analysis.json` is **cross-model (distinctiveness vs other
+> models' conclusions)** — a different definition, not directly comparable. Do not place
+> this experiment's `gemma3:1b` 0.995 (a different abstract phrasing each repeat) on the same
+> axis as Exp2 `gpt-oss:120b` 0.894 (distinctiveness vs other models) and conclude "local 1B
+> beats cloud 120B at creativity" — these are different quantities. Exp3 novelty measures
+> "does the form generate a different synthesis each time," not "how original vs other models."
 
 ## Results (`data/exp3_analysis.json`)
 
