@@ -31,7 +31,7 @@
 ## 3. Control #2 — $\alpha$ (authenticity gate)
 | field | value |
 |---|---|
-| trigger | $S_3$ in the borderline zone — proxies flag: $\nu\ge0.999$ AND $\kappa_{\text{op}}\le3.7$ (Stage A candidate-cheat zone) |
+| trigger | $S_3$ in the low-operational-concreteness zone — $\kappa_{\text{op}}\le3.7$ (**kop-only**; ν dropped per Stage B — ν is non-discriminating). **α is scoped to `synthesize`** (decide uses `intent`; surface currently ungated) |
 | human input | $S_3$ + observables + comparison → `G (genuine sublation) \| C (cheat) \| B (borderline)` |
 | effect | G→accept · C→re-route to a stronger model / re-run · B→human decides |
 | hidden when | clear case (proxies agree / unflagged) → auto-accept |

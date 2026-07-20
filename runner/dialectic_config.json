@@ -1,0 +1,21 @@
+{
+  "theta_r": 0.30,
+  "alpha_nu_threshold": 0.999,
+  "alpha_kop_threshold": 3.7,
+  "local_endpoint": "http://localhost:11434/v1/chat/completions",
+  "cloud_endpoint": "https://ollama.com/v1/chat/completions",
+  "api_key_env": "OLLAMA_API_KEY",
+  "max_tokens": 4096,
+  "temperature": 0.3,
+  "seed": 42,
+  "routing": {
+    "synthesize":                {"model": "gemma3:1b",     "endpoint": "local"},
+    "surface_assumptions":       {"model": "gemma3:1b",     "endpoint": "local"},
+    "decide_clear":              {"model": "gemma4:12b-mlx", "endpoint": "local"},
+    "decide_contested_scrutinize": {"model": "gemma4:12b-mlx", "endpoint": "local"},
+    "decide_contested_include":   {"model": "gpt-oss:120b", "endpoint": "cloud"},
+    "decide_contested_neutral":   {"model": "gpt-oss:120b", "endpoint": "cloud"},
+    "alpha_cheat_reroute":       {"model": "gpt-oss:120b", "endpoint": "cloud"}
+  },
+  "contestedness_source": "data/analysis.json"
+}

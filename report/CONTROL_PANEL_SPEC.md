@@ -26,7 +26,7 @@
 ## 3. 컨트롤 #2 — $\alpha$ (진정성 게이트)
 | 항목 | 값 |
 |---|---|
-| 트리거 | $S_3$가 경계 영역 — 프록시 flag: $\nu\ge0.999$ AND $\kappa_{\text{op}}\le3.7$ (Stage A candidate-cheat 영역) |
+| 트리거 | $S_3$가 저-작동구조 영역 — $\kappa_{\text{op}}\le3.7$ (**kop-only**; ν는 Stage B가 비판별량으로 기각해 제외). **α는 `synthesize`에 한정**(decide는 `intent` 담당, surface는 현재 비게이티드) |
 | 인간 입력 | $S_3$ + 관측량 + 비교 표시 → `G(진짜 지양) \| C(cheat) \| B(경계)` |
 | 효과 | G→수용 · C→강한 모델로 재라우팅/재실행 · B→인간 결정 |
 | 비노출 | 명확 사례(프록시 일치/미flag) → 자동 수용 |
